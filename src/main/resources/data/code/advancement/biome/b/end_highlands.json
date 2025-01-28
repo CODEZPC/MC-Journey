@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/b/end_barrens",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:end_stone"
+        },
+        "title": {
+            "translate": "biome.end_highlands"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "end_highlands": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:end_highlands"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "end_highlands"
+        ]
+    ]
+}

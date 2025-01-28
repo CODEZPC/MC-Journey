@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/d/soul_sand_valley",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:bamboo"
+        },
+        "title": {
+            "translate": "biome.sparse_jungle"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "sparse_jungle": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:sparse_jungle"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "sparse_jungle"
+        ]
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/minerals/0003-3-netherite",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:netherite_ingot"
+        },
+        "title": {
+            "translate": "main.minerals.0003-3-netherite-1"
+        },
+        "description": {
+            "translate": "main.minerals.0003-3-netherite-1.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "challenge"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:netherite_ingot"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

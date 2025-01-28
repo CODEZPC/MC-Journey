@@ -1,0 +1,38 @@
+{
+    "display": {
+        "background": "minecraft:textures/gui/advancements/backgrounds/code.png",
+        "icon": {
+            "count": 1,
+            "id": "minecraft:bedrock"
+        },
+        "title": {
+            "translate": "root"
+        },
+        "description": {
+            "translate": "root.d"
+        },
+        "announce_to_chat": false,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "start": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "dimension": "minecraft:overworld"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "start"
+        ]
+    ],
+    "rewards":{
+        "function": "code:adv/root"
+    }
+}

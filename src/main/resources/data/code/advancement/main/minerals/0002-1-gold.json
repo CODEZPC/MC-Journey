@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/minerals/0002-1-r_gold",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:gold_ingot"
+        },
+        "title": {
+            "translate": "main.minerals.0002-1-gold"
+        },
+        "description": {
+            "translate": "main.minerals.0002-1-gold.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "goal"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:gold_ingot"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

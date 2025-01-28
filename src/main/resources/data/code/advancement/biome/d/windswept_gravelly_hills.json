@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/d/windswept_forest",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:gravel"
+        },
+        "title": {
+            "translate": "biome.windswept_gravelly_hills"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "windswept_gravelly_hills": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:windswept_gravelly_hills"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "windswept_gravelly_hills"
+        ]
+    ]
+}   

@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/c/ocean",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:birch_log"
+        },
+        "title": {
+            "translate": "biome.old_growth_birch_forest"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "old_growth_birch_forest": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:old_growth_birch_forest"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "old_growth_birch_forest"
+        ]
+    ]
+}

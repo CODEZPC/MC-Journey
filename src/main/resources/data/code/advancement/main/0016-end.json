@@ -1,0 +1,31 @@
+{
+    "parent": "code:main/0015-stronghold",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:end_stone"
+        },
+        "title": {
+            "translate": "main.0016-end"
+        },
+        "description": {
+            "translate": "main.0016-end.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "goal"
+    },
+    "criteria": {
+        "enter": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "minecraft:the_end"
+            }
+        }
+    },
+    "requirements": [
+        [
+            "enter"
+        ]
+    ]
+}

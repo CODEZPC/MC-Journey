@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/0011-nether",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:nether_bricks"
+        },
+        "title": {
+            "translate": "main.0012-fortress"
+        },
+        "description": {
+            "translate": "main.0012-fortress.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "enter": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "structures": "minecraft:fortress"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "enter"
+        ]
+    ]
+}

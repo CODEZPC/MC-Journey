@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/c/river",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:acacia_log"
+        },
+        "title": {
+            "translate": "biome.savanna_plateau"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "savanna_plateau": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:savanna_plateau"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "savanna_plateau"
+        ]
+    ]
+}

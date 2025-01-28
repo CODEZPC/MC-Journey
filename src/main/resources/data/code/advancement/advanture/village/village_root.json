@@ -1,0 +1,35 @@
+{
+    "parent": "code:advanture/root",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:white_bed"
+        },
+        "title": {
+            "translate": "advanture.village_root"
+        },
+        "description": {
+            "translate": "advanture.village_root.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "enter": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "structures": "#minecraft:village"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "enter"
+        ]
+    ]
+}

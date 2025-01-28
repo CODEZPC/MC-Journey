@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/0001-wood",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:oak_planks"
+        },
+        "title": {
+            "translate": "main.0002-plank"
+        },
+        "description": {
+            "translate": "main.0002-plank.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "#minecraft:planks"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

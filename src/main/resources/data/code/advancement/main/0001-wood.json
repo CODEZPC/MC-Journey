@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/root",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:oak_log"
+        },
+        "title": {
+            "translate": "main.0001-wood"
+        },
+        "description": {
+            "translate": "main.0001-wood.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "#minecraft:logs"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

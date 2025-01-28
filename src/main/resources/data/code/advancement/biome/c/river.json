@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/c/plains",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:water_bucket"
+        },
+        "title": {
+            "translate": "biome.river"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "river": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:river"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "river"
+        ]
+    ]
+}

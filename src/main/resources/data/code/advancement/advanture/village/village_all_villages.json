@@ -1,0 +1,87 @@
+{
+    "parent": "code:advanture/village/village_root",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:yellow_bed"
+        },
+        "title": {
+            "translate": "advanture.village_all_villages"
+        },
+        "description": {
+            "translate": "advanture.village_all_villages.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "challenge"
+    },
+    "criteria": {
+        "desert": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "structures": "minecraft:village_desert"
+                    }
+                }
+            }
+        },
+        "plains": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "structures": "minecraft:village_plains"
+                    }
+                }
+            }
+        },
+        "savanna": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "structures": "minecraft:village_savanna"
+                    }
+                }
+            }
+        },
+        "snowy": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "structures": "minecraft:village_snowy"
+                    }
+                }
+            }
+        },
+        "taiga": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "structures": "minecraft:village_taiga"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "desert"
+        ],
+        [
+            "plains"
+        ],
+        [
+            "savanna"
+        ],
+        [
+            "snowy"
+        ],
+        [
+            "taiga"
+        ]
+    ]
+}

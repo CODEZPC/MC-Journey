@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/a/deep_frozen_ocean",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:water_bucket"
+        },
+        "title": {
+            "translate": "biome.deep_lukewarm_ocean"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "deep_lukewarm_ocean": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:deep_lukewarm_ocean"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "deep_lukewarm_ocean"
+        ]
+    ]
+}

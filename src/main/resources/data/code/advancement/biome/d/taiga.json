@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/d/swamp",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:spruce_log"
+        },
+        "title": {
+            "translate": "biome.taiga"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "taiga": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:taiga"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "taiga"
+        ]
+    ]
+}   

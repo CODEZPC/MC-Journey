@@ -1,0 +1,42 @@
+{
+    "parent": "code:advanture/village/village_root",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:bell"
+        },
+        "title": {
+            "translate": "advanture.village_bell"
+        },
+        "description": {
+            "translate": "advanture.village_bell.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "bell": {
+            "trigger": "minecraft:any_block_use",
+            "conditions": {
+                "location": [
+                    {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                            "structures": "#minecraft:village"
+                        }
+                    },
+                    {
+                        "condition": "minecraft:block_state_property",
+                        "block": "minecraft:bell"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "bell"
+        ]
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/minerals/0003-4-upgrade",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:netherite_pickaxe"
+        },
+        "title": {
+            "translate": "main.other.netherite_pickaxe"
+        },
+        "description": {
+            "translate": "main.other.netherite_pickaxe.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "challenge"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:netherite_pickaxe"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

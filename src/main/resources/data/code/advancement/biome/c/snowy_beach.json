@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/c/small_end_islands",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:sand"
+        },
+        "title": {
+            "translate": "biome.snowy_beach"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "snowy_beach": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:snowy_beach"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "snowy_beach"
+        ]
+    ]
+}

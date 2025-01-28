@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/b/lush_caves",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:mangrove_roots"
+        },
+        "title": {
+            "translate": "biome.mangrove_swamp"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "mangrove_swamp": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:mangrove_swamp"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "mangrove_swamp"
+        ]
+    ]
+}

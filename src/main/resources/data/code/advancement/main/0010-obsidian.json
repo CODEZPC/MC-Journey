@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/0009-diamond_pickaxe",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:obsidian"
+        },
+        "title": {
+            "translate": "main.0010-obsidian"
+        },
+        "description": {
+            "translate": "main.0010-obsidian.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:obsidian"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

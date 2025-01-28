@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/b/frozen_ocean",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:snow_block"
+        },
+        "title": {
+            "translate": "biome.frozen_peaks"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "frozen_peaks": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:frozen_peaks"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "frozen_peaks"
+        ]
+    ]
+}

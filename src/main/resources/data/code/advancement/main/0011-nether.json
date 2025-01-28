@@ -1,0 +1,31 @@
+{
+    "parent": "code:main/0010-obsidian",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:netherrack"
+        },
+        "title": {
+            "translate": "main.0011-nether"
+        },
+        "description": {
+            "translate": "main.0011-nether.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "enter": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "to": "minecraft:the_nether"
+            }
+        }
+    },
+    "requirements": [
+        [
+            "enter"
+        ]
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/c/meadow",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:mycelium"
+        },
+        "title": {
+            "translate": "biome.mushroom_fields"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "mushroom_fields": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:mushroom_fields"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "mushroom_fields"
+        ]
+    ]
+}

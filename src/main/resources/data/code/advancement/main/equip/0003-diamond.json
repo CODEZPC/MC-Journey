@@ -1,0 +1,68 @@
+{
+    "parent": "code:main/minerals/0002-2-diamond",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:diamond_chestplate"
+        },
+        "title": {
+            "translate": "main.equip.0003-diamond"
+        },
+        "description": {
+            "translate": "main.equip.0003-diamond.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "diamond_helmet": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:diamond_helmet"
+                    }
+                ]
+            }
+        },
+        "diamond_chestplate": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:diamond_chestplate"
+                    }
+                ]
+            }
+        },
+        "diamond_leggings": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:diamond_leggings"
+                    }
+                ]
+            }
+        },
+        "diamond_boots": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:diamond_boots"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "diamond_helmet",
+            "diamond_chestplate",
+            "diamond_leggings",
+            "diamond_boots"
+        ]
+    ]
+}

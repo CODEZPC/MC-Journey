@@ -1,0 +1,33 @@
+{
+    "parent": "code:advanture/village/village_root",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:stone_axe"
+        },
+        "title": {
+            "translate": "advanture.village_omen"
+        },
+        "description": {
+            "translate": "advanture.village_omen.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "goal"
+    },
+    "criteria": {
+        "effect": {
+            "trigger": "minecraft:effects_changed",
+            "conditions": {
+                "effects": {
+                    "minecraft:raid_omen":{}
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "effect"
+        ]
+    ]
+}

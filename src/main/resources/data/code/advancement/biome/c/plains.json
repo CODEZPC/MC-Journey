@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/c/old_growth_spruce_taiga",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:grass_block"
+        },
+        "title": {
+            "translate": "biome.plains"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "plains": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:plains"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "plains"
+        ]
+    ]
+}

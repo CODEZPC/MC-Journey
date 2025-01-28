@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/0007-stone_pickaxe",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:coal"
+        },
+        "title": {
+            "translate": "main.minerals.0001-1-coal"
+        },
+        "description": {
+            "translate": "main.minerals.0001-1-coal.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "goal"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:coal"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

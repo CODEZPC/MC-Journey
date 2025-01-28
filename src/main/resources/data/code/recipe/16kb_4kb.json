@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "code:data_16kb"
+        }
+    ],
+    "result": {
+        "id": "code:data_4kb",
+        "count": 4
+    }
+}

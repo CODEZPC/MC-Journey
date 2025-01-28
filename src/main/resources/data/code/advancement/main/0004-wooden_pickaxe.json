@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/0003-crafting",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:wooden_pickaxe"
+        },
+        "title": {
+            "translate": "main.0004-wooden_pickaxe"
+        },
+        "description": {
+            "translate": "main.0004-wooden_pickaxe.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:wooden_pickaxe"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

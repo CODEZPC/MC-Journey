@@ -1,0 +1,74 @@
+{
+    "parent": "code:main/equip/0001-iron",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:iron_chestplate"
+        },
+        "title": {
+            "translate": "main.equip.0001-iron-1"
+        },
+        "description": {
+            "translate": "main.equip.0001-iron-1.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "goal"
+    },
+    "criteria": {
+        "iron_helmet": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:iron_helmet"
+                    }
+                ]
+            }
+        },
+        "iron_chestplate": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:iron_chestplate"
+                    }
+                ]
+            }
+        },
+        "iron_leggings": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:iron_leggings"
+                    }
+                ]
+            }
+        },
+        "iron_boots": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:iron_boots"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "iron_helmet"
+        ],
+        [
+            "iron_chestplate"
+        ],
+        [
+            "iron_leggings"
+        ],
+        [
+            "iron_boots"
+        ]
+    ]
+}

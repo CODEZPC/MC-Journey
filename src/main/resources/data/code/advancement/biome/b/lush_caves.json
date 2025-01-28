@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/b/lukewarm_ocean",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:moss_block"
+        },
+        "title": {
+            "translate": "biome.lush_caves"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "lush_caves": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:lush_caves"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "lush_caves"
+        ]
+    ]
+}

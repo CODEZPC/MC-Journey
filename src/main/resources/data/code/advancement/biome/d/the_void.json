@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/d/the_end",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:barrier"
+        },
+        "title": {
+            "translate": "biome.the_void"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "the_void": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:the_void"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "the_void"
+        ]
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/c/savanna",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:end_stone"
+        },
+        "title": {
+            "translate": "biome.small_end_islands"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "small_end_islands": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:small_end_islands"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "small_end_islands"
+        ]
+    ]
+}

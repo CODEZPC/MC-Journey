@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/c/snowy_slopes",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:spruce_log"
+        },
+        "title": {
+            "translate": "biome.snowy_taiga"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "snowy_taiga": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:snowy_taiga"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "snowy_taiga"
+        ]
+    ]
+}   

@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/c/old_growth_birch_forest",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:spruce_log"
+        },
+        "title": {
+            "translate": "biome.old_growth_pine_taiga"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "old_growth_pine_taiga": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:old_growth_pine_taiga"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "old_growth_pine_taiga"
+        ]
+    ]
+}

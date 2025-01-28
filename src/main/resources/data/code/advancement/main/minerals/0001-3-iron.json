@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/minerals/0001-3-r_iron",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:iron_ingot"
+        },
+        "title": {
+            "translate": "main.minerals.0001-3-iron"
+        },
+        "description": {
+            "translate": "main.minerals.0001-3-iron.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "goal"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:iron_ingot"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

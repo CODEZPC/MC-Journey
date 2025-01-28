@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/d/warm_ocean",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:warped_stem"
+        },
+        "title": {
+            "translate": "biome.warped_forest"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "warped_forest": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:warped_forest"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "warped_forest"
+        ]
+    ]
+}   

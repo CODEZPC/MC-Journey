@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/d/windswept_savanna",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:terracotta"
+        },
+        "title": {
+            "translate": "biome.wooded_badlands"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "wooded_badlands": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:wooded_badlands"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "wooded_badlands"
+        ]
+    ]
+}

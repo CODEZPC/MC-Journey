@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/root",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:grass_block"
+        },
+        "title": {
+            "translate": "biome.meadow"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "meadow": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:meadow"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "meadow"
+        ]
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/d/taiga",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:end_stone"
+        },
+        "title": {
+            "translate": "biome.the_end"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "the_end": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:the_end"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "the_end"
+        ]
+    ]
+}   

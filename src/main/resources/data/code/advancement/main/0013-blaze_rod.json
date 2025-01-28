@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/0012-fortress",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:blaze_rod"
+        },
+        "title": {
+            "translate": "main.0013-blaze_rod"
+        },
+        "description": {
+            "translate": "main.0013-blaze_rod.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "goal"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:blaze_rod"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

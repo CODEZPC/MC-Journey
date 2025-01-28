@@ -1,0 +1,33 @@
+{
+    "parent": "code:advanture/village/village_emer",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:emerald"
+        },
+        "title": {
+            "translate": "advanture.village_hero"
+        },
+        "description": {
+            "translate": "advanture.village_hero.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "challenge"
+    },
+    "criteria": {
+        "effect": {
+            "trigger": "minecraft:effects_changed",
+            "conditions": {
+                "effects": {
+                    "minecraft:hero_of_the_village":{}
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "effect"
+        ]
+    ]
+}

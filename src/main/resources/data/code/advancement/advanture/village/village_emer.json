@@ -1,0 +1,28 @@
+{
+    "parent": "code:advanture/village/village_omen",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:iron_axe"
+        },
+        "title": {
+            "translate": "advanture.village_emer"
+        },
+        "description": {
+            "translate": "advanture.village_emer.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "goal"
+    },
+    "criteria": {
+        "emer": {
+            "trigger": "minecraft:voluntary_exile"
+        }
+    },
+    "requirements": [
+        [
+            "emer"
+        ]
+    ]
+}

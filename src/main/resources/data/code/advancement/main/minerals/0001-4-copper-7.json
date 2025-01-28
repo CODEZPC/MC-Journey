@@ -1,0 +1,43 @@
+{
+    "parent": "code:main/minerals/0001-4-copper-6",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:copper_ingot"
+        },
+        "title": {
+            "translate": "main.minerals.0001-4-copper-7"
+        },
+        "description": {
+            "translate": "main.minerals.0001-4-copper-7.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "challenge"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:copper_ingot",
+                        "count": {
+                            "min": 64
+                        }
+                    }
+                ],
+                "slots": {
+                    "full": {
+                        "min": 36
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/a/badlands",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:bamboo"
+        },
+        "title": {
+            "translate": "biome.bamboo_jungle"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "bamboo_jungle": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:bamboo_jungle"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "bamboo_jungle"
+        ]
+    ]
+}

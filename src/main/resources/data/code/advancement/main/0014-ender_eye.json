@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/0013-blaze_rod",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:ender_eye"
+        },
+        "title": {
+            "translate": "main.0014-ender_eye"
+        },
+        "description": {
+            "translate": "main.0014-ender_eye.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "goal"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:ender_eye"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

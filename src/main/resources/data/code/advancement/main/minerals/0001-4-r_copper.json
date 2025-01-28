@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/0007-stone_pickaxe",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:raw_copper"
+        },
+        "title": {
+            "translate": "main.minerals.0001-4-r_copper"
+        },
+        "description": {
+            "translate": "main.minerals.0001-4-r_copper.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:raw_copper"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

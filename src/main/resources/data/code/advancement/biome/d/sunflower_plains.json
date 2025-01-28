@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/d/stony_shore",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:grass_block"
+        },
+        "title": {
+            "translate": "biome.sunflower_plains"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "sunflower_plains": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:sunflower_plains"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "sunflower_plains"
+        ]
+    ]
+}

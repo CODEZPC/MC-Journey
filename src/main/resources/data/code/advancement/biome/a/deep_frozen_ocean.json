@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/a/deep_dark",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:blue_ice"
+        },
+        "title": {
+            "translate": "biome.deep_frozen_ocean"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "deep_frozen_ocean": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:deep_frozen_ocean"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "deep_frozen_ocean"
+        ]
+    ]
+}

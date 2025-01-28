@@ -1,0 +1,68 @@
+{
+    "parent": "code:main/minerals/0002-1-gold",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:golden_chestplate"
+        },
+        "title": {
+            "translate": "main.equip.0002-gold"
+        },
+        "description": {
+            "translate": "main.equip.0002-gold.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "golden_helmet": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:golden_helmet"
+                    }
+                ]
+            }
+        },
+        "golden_chestplate": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:golden_chestplate"
+                    }
+                ]
+            }
+        },
+        "golden_leggings": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:golden_leggings"
+                    }
+                ]
+            }
+        },
+        "golden_boots": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:golden_boots"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "golden_helmet",
+            "golden_chestplate",
+            "golden_leggings",
+            "golden_boots"
+        ]
+    ]
+}

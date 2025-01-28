@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/c/mushroom_fields",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:netherrack"
+        },
+        "title": {
+            "translate": "biome.nether_wastes"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "nether_wastes": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:nether_wastes"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "nether_wastes"
+        ]
+    ]
+}

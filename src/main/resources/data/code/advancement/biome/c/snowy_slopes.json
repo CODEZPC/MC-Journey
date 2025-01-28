@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/c/snowy_plains",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:snow_block"
+        },
+        "title": {
+            "translate": "biome.snowy_slopes"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "snowy_slopes": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:snowy_slopes"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "snowy_slopes"
+        ]
+    ]
+}   

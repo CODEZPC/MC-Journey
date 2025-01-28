@@ -1,0 +1,33 @@
+{
+    "parent": "code:advanture/village/village_root",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:iron_sword"
+        },
+        "title": {
+            "translate": "advanture.village_hurt_irongolem"
+        },
+        "description": {
+            "translate": "advanture.village_hurt_irongolem.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "kill": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:iron_golem"
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "kill"
+        ]
+    ]
+}

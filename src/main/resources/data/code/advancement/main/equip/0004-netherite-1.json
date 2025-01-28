@@ -1,0 +1,74 @@
+{
+    "parent": "code:main/equip/0004-netherite",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:netherite_chestplate"
+        },
+        "title": {
+            "translate": "main.equip.0004-netherite-1"
+        },
+        "description": {
+            "translate": "main.equip.0004-netherite-1.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "challenge"
+    },
+    "criteria": {
+        "netherite_helmet": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:netherite_helmet"
+                    }
+                ]
+            }
+        },
+        "netherite_chestplate": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:netherite_chestplate"
+                    }
+                ]
+            }
+        },
+        "netherite_leggings": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:netherite_leggings"
+                    }
+                ]
+            }
+        },
+        "netherite_boots": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:netherite_boots"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "netherite_helmet"
+        ],
+        [
+            "netherite_chestplate"
+        ],
+        [
+            "netherite_leggings"
+        ],
+        [
+            "netherite_boots"
+        ]
+    ]
+}

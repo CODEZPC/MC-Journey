@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/a/cold_ocean",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:crimson_stem"
+        },
+        "title": {
+            "translate": "biome.crimson_forest"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "crimson_forest": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:crimson_forest"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "crimson_forest"
+        ]
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/a/deep_cold_ocean",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:sculk"
+        },
+        "title": {
+            "translate": "biome.deep_dark"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "deep_dark": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:deep_dark"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "deep_dark"
+        ]
+    ]
+}

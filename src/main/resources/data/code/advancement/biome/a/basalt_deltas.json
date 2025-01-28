@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/a/bamboo_jungle",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:basalt"
+        },
+        "title": {
+            "translate": "biome.basalt_deltas"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "basalt_deltas": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:basalt_deltas"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "basalt_deltas"
+        ]
+    ]
+}

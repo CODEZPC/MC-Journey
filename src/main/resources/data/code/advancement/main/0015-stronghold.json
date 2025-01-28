@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/0014-ender_eye",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:end_portal_frame"
+        },
+        "title": {
+            "translate": "main.0015-stronghold"
+        },
+        "description": {
+            "translate": "main.0015-stronghold.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "goal"
+    },
+    "criteria": {
+        "enter": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "structures": "minecraft:stronghold"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "enter"
+        ]
+    ]
+}

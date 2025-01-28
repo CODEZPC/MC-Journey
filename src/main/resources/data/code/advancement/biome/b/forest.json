@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/b/flower_forest",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:oak_log"
+        },
+        "title": {
+            "translate": "biome.forest"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "forest": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:forest"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "forest"
+        ]
+    ]
+}

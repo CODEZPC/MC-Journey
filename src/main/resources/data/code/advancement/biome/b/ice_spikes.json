@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/b/grove",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:packed_ice"
+        },
+        "title": {
+            "translate": "biome.ice_spikes"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "ice_spikes": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:ice_spikes"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "ice_spikes"
+        ]
+    ]
+}

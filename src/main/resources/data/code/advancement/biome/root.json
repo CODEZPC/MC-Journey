@@ -1,0 +1,35 @@
+{
+    "parent": "code:root",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:book"
+        },
+        "title": {
+            "translate": "biome.root"
+        },
+        "description": {
+            "translate": "biome.root.d"
+        },
+        "announce_to_chat": false,
+        "show_toast": false,
+        "frame": "task"
+    },
+    "criteria": {
+        "overworld": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "dimension": "minecraft:overworld"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "overworld"
+        ]
+    ]
+}

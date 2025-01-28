@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/b/eroded_badlands",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:poppy"
+        },
+        "title": {
+            "translate": "biome.flower_forest"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "flower_forest": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:flower_forest"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "flower_forest"
+        ]
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "parent": "code:main/0016-end",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:end_stone"
+        },
+        "title": {
+            "translate": "main.0017-kill_dragon"
+        },
+        "description": {
+            "translate": "main.0017-kill_dragon.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "challenge"
+    },
+    "criteria": {
+        "kill": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "entity": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:ender_dragon"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "kill"
+        ]
+    ]
+}

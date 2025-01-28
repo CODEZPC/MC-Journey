@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/b/jagged_peaks",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:jungle_log"
+        },
+        "title": {
+            "translate": "biome.jungle"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "jungle": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:jungle"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "jungle"
+        ]
+    ]
+}

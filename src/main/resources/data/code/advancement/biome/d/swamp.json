@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/d/sunflower_plains",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:lily_pad"
+        },
+        "title": {
+            "translate": "biome.swamp"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "swamp": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:swamp"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "swamp"
+        ]
+    ]
+}

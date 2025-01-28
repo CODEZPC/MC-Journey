@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/0009-diamond_pickaxe",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:ancient_debris"
+        },
+        "title": {
+            "translate": "main.minerals.0003-2-ancient_debris"
+        },
+        "description": {
+            "translate": "main.minerals.0003-2-ancient_debris.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:ancient_debris"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

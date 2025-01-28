@@ -1,0 +1,36 @@
+{
+    "parent": "code:main/minerals/0002-2-emerald",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:emerald"
+        },
+        "title": {
+            "translate": "main.minerals.0002-2-emerald-1"
+        },
+        "description": {
+            "translate": "main.minerals.0002-2-emerald-1.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "challenge"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:emerald",
+                        "count": 64
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

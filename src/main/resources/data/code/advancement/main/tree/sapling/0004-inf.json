@@ -1,0 +1,36 @@
+{
+    "parent": "code:main/tree/sapling/0002-plant",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:oak_sapling"
+        },
+        "title": {
+            "translate": "main.tree.sapling.0004-inf"
+        },
+        "description": {
+            "translate": "main.tree.sapling.0004-inf.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "challenge"
+    },
+    "criteria": {
+        "0004-pre-inf": {
+            "trigger": "minecraft:impossible",
+            "conditions": {
+                "location": [
+                    {
+                        "condition": "minecraft:block_state_property",
+                        "block": "minecraft:oak_sapling"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "0004-pre-inf"
+        ]
+    ]
+}

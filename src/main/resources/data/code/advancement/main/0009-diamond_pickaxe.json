@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/minerals/0002-2-diamond",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:diamond_pickaxe"
+        },
+        "title": {
+            "translate": "main.0009-diamond_pickaxe"
+        },
+        "description": {
+            "translate": "main.0009-diamond_pickaxe.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "goal"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:diamond_pickaxe"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

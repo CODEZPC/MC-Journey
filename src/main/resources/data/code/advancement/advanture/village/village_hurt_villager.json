@@ -1,0 +1,33 @@
+{
+    "parent": "code:advanture/village/village_root",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:stone_sword"
+        },
+        "title": {
+            "translate": "advanture.village_hurt_villager"
+        },
+        "description": {
+            "translate": "advanture.village_hurt_villager.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "hurt": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:villager"
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "hurt"
+        ]
+    ]
+}

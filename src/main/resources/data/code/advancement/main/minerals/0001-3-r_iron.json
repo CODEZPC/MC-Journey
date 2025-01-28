@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/0007-stone_pickaxe",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:raw_iron"
+        },
+        "title": {
+            "translate": "main.minerals.0001-3-r_iron"
+        },
+        "description": {
+            "translate": "main.minerals.0001-3-r_iron.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:raw_iron"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

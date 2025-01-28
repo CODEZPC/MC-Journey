@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "code:data_256tb"
+        }
+    ],
+    "result": {
+        "id": "code:data_64tb",
+        "count": 4
+    }
+}

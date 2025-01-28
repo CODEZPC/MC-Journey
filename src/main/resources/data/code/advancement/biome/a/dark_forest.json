@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/a/crimson_forest",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:dark_oak_log"
+        },
+        "title": {
+            "translate": "biome.dark_forest"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "dark_forest": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:dark_forest"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "dark_forest"
+        ]
+    ]
+}

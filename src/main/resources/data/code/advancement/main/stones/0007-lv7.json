@@ -1,0 +1,43 @@
+{
+    "parent": "code:main/stones/0006-lv6",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:cobblestone"
+        },
+        "title": {
+            "translate": "main.stones.0007-lv7"
+        },
+        "description": {
+            "translate": "main.stones.0007-lv7.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "challenge"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:cobblestone",
+                        "count": {
+                            "min": 64
+                        }
+                    }
+                ],
+                "slots": {
+                    "full": {
+                        "min": 36
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

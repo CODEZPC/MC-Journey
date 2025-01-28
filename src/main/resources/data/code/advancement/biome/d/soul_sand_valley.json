@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/root",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:soul_sand"
+        },
+        "title": {
+            "translate": "biome.soul_sand_valley"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "soul_sand_valley": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:soul_sand_valley"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "soul_sand_valley"
+        ]
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/a/dark_forest",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:water_bucket"
+        },
+        "title": {
+            "translate": "biome.deep_cold_ocean"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "deep_cold_ocean": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:deep_cold_ocean"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "deep_cold_ocean"
+        ]
+    ]
+}

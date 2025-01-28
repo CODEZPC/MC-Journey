@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/0010-obsidian",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:crying_obsidian"
+        },
+        "title": {
+            "translate": "main.minerals.0003-1-crying_obsidian"
+        },
+        "description": {
+            "translate": "main.minerals.0003-1-crying_obsidian.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:crying_obsidian"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

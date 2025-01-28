@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/b/end_midlands",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:brown_terracotta"
+        },
+        "title": {
+            "translate": "biome.eroded_badlands"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "eroded_badlands": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:eroded_badlands"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "eroded_badlands"
+        ]
+    ]
+}

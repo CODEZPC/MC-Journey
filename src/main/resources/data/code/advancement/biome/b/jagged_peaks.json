@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/b/ice_spikes",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:stone"
+        },
+        "title": {
+            "translate": "biome.jagged_peaks"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "jagged_peaks": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:jagged_peaks"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "jagged_peaks"
+        ]
+    ]
+}

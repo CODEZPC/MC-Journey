@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/0008-iron_pickaxe",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:diamond"
+        },
+        "title": {
+            "translate": "main.minerals.0002-2-diamond"
+        },
+        "description": {
+            "translate": "main.minerals.0002-2-diamond.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "goal"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:diamond"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

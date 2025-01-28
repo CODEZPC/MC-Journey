@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/c/snowy_beach",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:grass_block"
+        },
+        "title": {
+            "translate": "biome.snowy_plains"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "snowy_plains": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:snowy_plains"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "snowy_plains"
+        ]
+    ]
+}

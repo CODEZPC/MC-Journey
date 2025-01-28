@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/0002-plank",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:crafting_table"
+        },
+        "title": {
+            "translate": "main.0003-crafting"
+        },
+        "description": {
+            "translate": "main.0003-crafting.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "goal"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:crafting_table"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/a/basalt_deltas",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:sand"
+        },
+        "title": {
+            "translate": "biome.beach"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "beach": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:beach"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "beach"
+        ]
+    ]
+}

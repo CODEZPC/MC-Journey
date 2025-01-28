@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/d/stony_peaks",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:stone"
+        },
+        "title": {
+            "translate": "biome.stony_shore"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "stony_shore": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:stony_shore"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "stony_shore"
+        ]
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "parent": "code:main/minerals/0001-3-iron",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:iron_pickaxe"
+        },
+        "title": {
+            "translate": "main.0008-iron_pickaxe"
+        },
+        "description": {
+            "translate": "main.0008-iron_pickaxe.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "goal"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:iron_pickaxe"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

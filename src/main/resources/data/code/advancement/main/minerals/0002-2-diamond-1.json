@@ -1,0 +1,43 @@
+{
+    "parent": "code:main/minerals/0002-2-diamond",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:diamond"
+        },
+        "title": {
+            "translate": "main.minerals.0002-2-diamond-1"
+        },
+        "description": {
+            "translate": "main.minerals.0002-2-diamond-1.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "challenge"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:diamond",
+                        "count": {
+                            "min": 64
+                        }
+                    }
+                ],
+                "slots": {
+                    "full": {
+                        "min": 1
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

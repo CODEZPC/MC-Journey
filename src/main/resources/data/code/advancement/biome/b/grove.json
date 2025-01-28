@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/b/frozen_river",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:spruce_leaves"
+        },
+        "title": {
+            "translate": "biome.grove"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "grove": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:grove"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "grove"
+        ]
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "parent": "code:main/0001-wood",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:oak_log"
+        },
+        "title": {
+            "translate": "main.tree.woods.0001-lv1"
+        },
+        "description": {
+            "translate": "main.tree.woods.0001-lv1.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "challenge"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "#minecraft:logs",
+                        "count": {
+                            "min": 64
+                        }
+                    }
+                ],
+                "slots": {
+                    "full": {
+                        "min": 1
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

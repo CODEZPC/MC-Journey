@@ -1,0 +1,36 @@
+{
+    "parent": "code:biome/a/deep_ocean",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:sand"
+        },
+        "title": {
+            "translate": "biome.desert"
+        },
+        "description": {
+            "translate": "empty"
+        },
+        "announce_to_chat": true,
+        "hidden": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "desert": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "biomes": "minecraft:desert"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "desert"
+        ]
+    ]
+}
