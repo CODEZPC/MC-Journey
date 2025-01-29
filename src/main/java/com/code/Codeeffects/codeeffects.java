@@ -10,7 +10,7 @@ entity.removeStatusEffect(undyingStatusEffectEntry);
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.player.PlayerEntity;
+// import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -21,9 +21,7 @@ class UndyingStatusEffect extends StatusEffect {
     }
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
-        if (entity instanceof PlayerEntity playerEntity) {
-            playerEntity.setHealth(20.0F);
-        }
+        entity.setHealth(20.0F);
         return true;
     }
     public boolean canApplyUpdateEffect(int duration, int amplifier,LivingEntity entity) {
