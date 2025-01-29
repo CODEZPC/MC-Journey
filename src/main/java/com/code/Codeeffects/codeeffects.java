@@ -20,10 +20,7 @@ class UndyingStatusEffect extends StatusEffect {
     }
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
-        if(entity.getHealth() < 5.0F && entity.getHealth() > 0.0F) {
-            entity.setHealth(18.0F);
-            entity.getStatusEffects().clear();
-        }
+        entity.setHealth(20.0F);
         return true;
     }
     @Override
