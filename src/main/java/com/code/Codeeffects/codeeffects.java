@@ -24,7 +24,7 @@ class UndyingStatusEffect extends StatusEffect {
         entity.setHealth(20.0F);
         return true;
     }
-    public boolean canApplyUpdateEffect(int duration, int amplifier,LivingEntity entity) {
+    public boolean canApplyUpdateEffect(int duration, int amplifier) {
         return true;
     }
 }
