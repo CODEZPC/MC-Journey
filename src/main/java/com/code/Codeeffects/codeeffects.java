@@ -27,10 +27,7 @@ class UndyingStatusEffect extends StatusEffect {
         return true;
     }
     public boolean canApplyUpdateEffect(int duration, int amplifier,LivingEntity entity) {
-        if(entity instanceof PlayerEntity playerEntity){
-            return playerEntity.getHealth() < 4.0F;
-        }
-        return false;
+        return true;
     }
 }
 
