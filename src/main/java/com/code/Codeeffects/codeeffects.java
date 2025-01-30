@@ -3,6 +3,7 @@ package com.code.Codeeffects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import net.fabricmc.api.ModInitializer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -12,6 +13,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 
 class Undying extends StatusEffect {
@@ -60,11 +62,15 @@ class BloodCloth extends StatusEffect {
     }
 }
 
-public class codeeffects {
-    public static final RegistryEntry<StatusEffect> UNDYING = new Undying();
-    public static final RegistryEntry<StatusEffect> BLOOD_CLOTH = new BloodCloth();
-    public static void Registry_Effects() {
-        Registry.register(Registries.STATUS_EFFECT, Identifier.of("code", "undying"), UNDYING);
-        Registry.register(Registries.STATUS_EFFECT, Identifier.of("code", "blood_cloth"), BLOOD_CLOTH);
+public class codeeffects implements ModInitializer{
+    public static final RegistryEntry<StatusEffect> UNDYING;
+    public static final RegistryEntry<StatusEffect> BLOOD_CLOTH;
+    static {
+        UNDYING = Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of("code", "undying"), new Undying());
+        BLOOD_CLOTH = Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of("code", "blood_cloth"), new BloodCloth());
+    }
+    @Override
+	public void onInitialize(){
+        //Nothing
     }
 }
