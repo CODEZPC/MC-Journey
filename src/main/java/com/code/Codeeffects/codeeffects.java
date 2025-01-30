@@ -1,11 +1,7 @@
 package com.code.Codeeffects;
 
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-/*
-RegistryEntry<StatusEffect> undyingStatusEffectEntry = Registry.STATUS_EFFECT.getEntry(Identifier.of("code", "undying")).orElseThrow();
-entity.removeStatusEffect(undyingStatusEffectEntry);
-*/
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
@@ -31,16 +27,20 @@ class UndyingStatusEffect extends StatusEffect {
 
 class BloodClothStatusEffect extends StatusEffect {
     private int ticks = 0;
+    public static final Logger L= LoggerFactory.getLogger("bloodcloth");
     public BloodClothStatusEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0xFF0000);
     }
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         ticks++;
-        if (ticks >= 100 && entity.getHealth() > 5.0F) {
-            entity.setHealth(entity.getHealth() - 1.0F * amplifier);
+        if (ticks >= 120 / amplifier && entity.getHealth() > 5.0F) {
+            entity.setHealth(entity.getHealth() - 1.0F);
+            entity.setMovementSpeed(0.05F);
+            L.info("BloodCloth: " + entity.getMovementSpeed());
             ticks = 0;
         }
+        //entity.setMovementSpeed(amplifier * 0.004F * (20.0F - entity.getHealth()) + 0.1F);
         return true;
     }
     @Override
