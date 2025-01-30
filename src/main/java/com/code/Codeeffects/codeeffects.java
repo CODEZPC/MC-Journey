@@ -40,12 +40,12 @@ class BloodClothStatusEffect extends StatusEffect {
         ticks++;
         if (ticks >= 120 / (amplifier + 1) && entity.getHealth() > 5.0F) {
             entity.setHealth(entity.getHealth() - 1.0F);
-            EntityAttributeInstance speed = entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
-            if (speed != null) {
-                int examp = (int) (20.0F - entity.getHealth()) / 5;
-                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1, amplifier + examp, true, false, false));
-            }
             ticks = 0;
+        }
+        EntityAttributeInstance speed = entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
+        if (speed != null) {
+            int examp = (int) (20.0F - entity.getHealth()) / 5;
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1, amplifier + examp, true, false, false));
         }
         return true;
     }
