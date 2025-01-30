@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import com.code.Codeblocks.codeblocks;
 import com.code.Codeitems.codeitems;
 import com.code.Codeloot.codeloottables;
+import com.code.Codepotions.codepotions;
 
 import net.fabricmc.api.ModInitializer;
 
@@ -33,5 +34,6 @@ public class MCJourney implements ModInitializer {
         codeitems.Registry_Items();
         codeloottables.modifyLootTables_STRUCTURES();
         codeloottables.modifyLootTables_ENTITIES();
+        codepotions.Registry_Potions();
     }
 }
