@@ -5,20 +5,29 @@ import org.slf4j.LoggerFactory;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import com.code.Codeeffects.codeeffects;
+
 
 public class codeitems {
     public static final Logger LOGGER = LoggerFactory.getLogger("code");
     //定义物品 - 技能点
     //Define items - skill points
     public static final Item Skill_Point = new Item((new Item.Settings()).maxCount(99));
+    //定义物品 - 药水
+    //Define items - potions
+    public static final Item Effect_Undying = new Item((new Item.Settings()).maxCount(1));
+    public static final Item Effect_Blood_Cloth_1 = new Item((new Item.Settings()).maxCount(1));
+    public static final Item Effect_Blood_Cloth_2 = new Item((new Item.Settings()).maxCount(1));
     //定义物品 - 奖牌组
     //Define items - medals group
     public static final Item Gold_Medal = new Item((new Item.Settings()).maxCount(1));
@@ -71,6 +80,10 @@ public class codeitems {
             entries.add(Gold_Medal);
             entries.add(Diamond_Medal);
             entries.add(Netherite_Medal);
+            /////////////
+            entries.add(Effect_Undying);
+            entries.add(Effect_Blood_Cloth_1);
+            entries.add(Effect_Blood_Cloth_2);
         })
         .build();
     //定义物品组 - 数据碎片组
@@ -119,6 +132,11 @@ public class codeitems {
         //Register items - skill points
         LOGGER.info("[CODE/ITEMS]:Starting to register items...");
         Registry.register(Registries.ITEM, Identifier.of("code", "skill_point"), Skill_Point);
+        //注册物品 - 药水
+        //Register items - potions
+        Registry.register(Registries.POTION, Identifier.of("code", "effect_undying"), new Potion(new StatusEffectInstance(codeeffects.UNDYING, 2000, 0)));
+        Registry.register(Registries.POTION, Identifier.of("code", "effect_blood_cloth_1"), new Potion(new StatusEffectInstance(codeeffects.BLOOD_CLOTH, 2000, 0)));
+        Registry.register(Registries.POTION, Identifier.of("code", "effect_blood_cloth_2"), new Potion(new StatusEffectInstance(codeeffects.BLOOD_CLOTH, 2000, 1)));
         //注册物品 - 奖牌
         //Register items - medals
         Registry.register(Registries.ITEM, Identifier.of("code", "gold_medal"), Gold_Medal);
