@@ -23,11 +23,6 @@ public class codeitems {
     //定义物品 - 技能点
     //Define items - skill points
     public static final Item Skill_Point = new Item((new Item.Settings()).maxCount(99));
-    //定义物品 - 药水
-    //Define items - potions
-    public static final Item Effect_Undying = new Item((new Item.Settings()).maxCount(1));
-    public static final Item Effect_Blood_Cloth_1 = new Item((new Item.Settings()).maxCount(1));
-    public static final Item Effect_Blood_Cloth_2 = new Item((new Item.Settings()).maxCount(1));
     //定义物品 - 奖牌组
     //Define items - medals group
     public static final Item Gold_Medal = new Item((new Item.Settings()).maxCount(1));
@@ -69,6 +64,10 @@ public class codeitems {
     public static final Item Data_64PB = new Item((new Item.Settings()).maxCount(96));
     public static final Item Data_256PB = new Item((new Item.Settings()).maxCount(96));
     public static final Item Data_1EB = new Item((new Item.Settings()).maxCount(96));
+    //定义药水
+    public static final Potion Effect_Undying = Registry.register(Registries.POTION, Identifier.of("code", "effect_undying"), new Potion(new StatusEffectInstance(codeeffects.UNDYING, 2000, 0)));
+    public static final Potion Effect_Blood_Cloth_1 = Registry.register(Registries.POTION, Identifier.of("code", "effect_blood_cloth_1"), new Potion(new StatusEffectInstance(codeeffects.BLOOD_CLOTH, 2000, 0)));
+    public static final Potion Effect_Blood_Cloth_2 = Registry.register(Registries.POTION, Identifier.of("code", "effect_blood_cloth_2"), new Potion(new StatusEffectInstance(codeeffects.BLOOD_CLOTH, 2000, 1)));
     //定义物品组 - 奖牌组
     //Define item groups - medals group
     public static final ItemGroup Medals = FabricItemGroup.builder()
@@ -80,10 +79,6 @@ public class codeitems {
             entries.add(Gold_Medal);
             entries.add(Diamond_Medal);
             entries.add(Netherite_Medal);
-            /////////////
-            entries.add(Effect_Undying);
-            entries.add(Effect_Blood_Cloth_1);
-            entries.add(Effect_Blood_Cloth_2);
         })
         .build();
     //定义物品组 - 数据碎片组
@@ -134,9 +129,7 @@ public class codeitems {
         Registry.register(Registries.ITEM, Identifier.of("code", "skill_point"), Skill_Point);
         //注册物品 - 药水
         //Register items - potions
-        Registry.register(Registries.POTION, Identifier.of("code", "effect_undying"), new Potion(new StatusEffectInstance(codeeffects.UNDYING, 2000, 0)));
-        Registry.register(Registries.POTION, Identifier.of("code", "effect_blood_cloth_1"), new Potion(new StatusEffectInstance(codeeffects.BLOOD_CLOTH, 2000, 0)));
-        Registry.register(Registries.POTION, Identifier.of("code", "effect_blood_cloth_2"), new Potion(new StatusEffectInstance(codeeffects.BLOOD_CLOTH, 2000, 1)));
+        ///
         //注册物品 - 奖牌
         //Register items - medals
         Registry.register(Registries.ITEM, Identifier.of("code", "gold_medal"), Gold_Medal);
