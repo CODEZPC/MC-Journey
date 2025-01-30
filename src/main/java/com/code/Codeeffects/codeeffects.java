@@ -38,7 +38,7 @@ class BloodClothStatusEffect extends StatusEffect {
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         ticks++;
         if (ticks >= 100 && entity.getHealth() > 5.0F) {
-            entity.setHealth(entity.getHealth() - 1.0F);
+            entity.setHealth(entity.getHealth() - 1.0F * amplifier);
             ticks = 0;
         }
         return true;
