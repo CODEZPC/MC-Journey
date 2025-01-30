@@ -7,7 +7,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.recipe.Ingredient;
 
-public class Codepotions {
+public class codepotions {
     public static void Registry_Potions() {
         FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(
