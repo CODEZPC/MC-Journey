@@ -17,7 +17,7 @@ import com.code.Codeitems.codeitems;
       (参数不匹配; Item无法转换为RegistryKey<Potion>)
     方法 Registry.getEntry(Potion)不适用
       (参数不匹配; Item无法转换为Potion)
-*/ */
+*/
 
 public class codepotions {
     public static void Registry_Potions() {
