@@ -29,9 +29,29 @@ class UndyingStatusEffect extends StatusEffect {
     }
 }
 
+class BloodClothStatusEffect extends StatusEffect {
+    public BloodClothStatusEffect() {
+        super(StatusEffectCategory.BENEFICIAL, 0xFF0000);
+    }
+    @Override
+    public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
+        if (entity.getHealth() > 5.0F) {
+            entity.setHealth(entity.getHealth() - 0.05F);
+        }
+        entity.speed = 5.0F;
+        return true;
+    }
+    @Override
+    public boolean canApplyUpdateEffect(int duration, int amplifier) {
+        return true;
+    }
+}
+
 public class codeeffects {
     public static final StatusEffect UNDYING = new UndyingStatusEffect();
+    public static final StatusEffect BLOOD_CLOTH = new BloodClothStatusEffect();
     public static void Registry_Effects() {
         Registry.register(Registries.STATUS_EFFECT, Identifier.of("code", "undying"), UNDYING);
+        Registry.register(Registries.STATUS_EFFECT, Identifier.of("code", "blood_cloth"), BLOOD_CLOTH);
     }
 }
