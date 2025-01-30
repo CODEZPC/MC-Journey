@@ -47,6 +47,11 @@ class BloodClothStatusEffect extends StatusEffect {
             int examp = (int) (20.0F - entity.getHealth()) / 5;
             entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, amplifier + examp, true, false, false));
         }
+        EntityAttributeInstance strength = entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE);
+        if (strength != null) {
+            int examp = (int) (20.0F - entity.getHealth()) / 5;
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 5, amplifier + examp, true, false, false));
+        }
         return true;
     }
     @Override
