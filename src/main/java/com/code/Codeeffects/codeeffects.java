@@ -61,8 +61,8 @@ class BloodCloth extends StatusEffect {
 }
 
 public class codeeffects {
-    public static final StatusEffect UNDYING = new UndyingStatusEffect();
-    public static final StatusEffect BLOOD_CLOTH = new BloodClothStatusEffect();
+    public static final StatusEffect UNDYING = new Undying();
+    public static final StatusEffect BLOOD_CLOTH = new BloodCloth();
     public static void Registry_Effects() {
         Registry.register(Registries.STATUS_EFFECT, Identifier.of("code", "undying"), UNDYING);
         Registry.register(Registries.STATUS_EFFECT, Identifier.of("code", "blood_cloth"), BLOOD_CLOTH);
