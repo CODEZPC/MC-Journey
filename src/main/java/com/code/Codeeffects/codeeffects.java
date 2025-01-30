@@ -14,8 +14,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-class UndyingStatusEffect extends StatusEffect {
-    public UndyingStatusEffect() {
+class Undying extends StatusEffect {
+    public Undying() {
         super(StatusEffectCategory.BENEFICIAL, 0xFFFF00);
     }
     @Override
@@ -29,10 +29,10 @@ class UndyingStatusEffect extends StatusEffect {
     }
 }
 
-class BloodClothStatusEffect extends StatusEffect {
+class BloodCloth extends StatusEffect {
     private int ticks = 0;
     public static final Logger L= LoggerFactory.getLogger("bloodcloth");
-    public BloodClothStatusEffect() {
+    public BloodCloth() {
         super(StatusEffectCategory.BENEFICIAL, 0xFF0000);
     }
     @Override
