@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttributeInstance;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.registry.Registries;
@@ -34,9 +36,12 @@ class BloodClothStatusEffect extends StatusEffect {
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         ticks++;
-        if (ticks >= 120 / amplifier && entity.getHealth() > 5.0F) {
+        if (ticks >= 120 / (amplifier + 1) && entity.getHealth() > 5.0F) {
             entity.setHealth(entity.getHealth() - 1.0F);
-            entity.setMovementSpeed(0.05F);
+            EntityAttributeInstance speed = entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
+            if (speed != null) {
+                speed.setBaseValue(0.3F);
+            }
             L.info("BloodCloth: " + entity.getMovementSpeed());
             ticks = 0;
         }
