@@ -45,7 +45,7 @@ class BloodClothStatusEffect extends StatusEffect {
         EntityAttributeInstance speed = entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
         if (speed != null) {
             int examp = (int) (20.0F - entity.getHealth()) / 5;
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1, amplifier + examp, true, false, false));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, amplifier + examp, true, false, false));
         }
         return true;
     }
