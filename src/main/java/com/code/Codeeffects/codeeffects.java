@@ -7,9 +7,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -45,12 +45,12 @@ class BloodClothStatusEffect extends StatusEffect {
         EntityAttributeInstance speed = entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
         if (speed != null) {
             int examp = (int) (20.0F - entity.getHealth()) / 5;
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, amplifier + examp, true, false, false));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, amplifier + (amplifier + 1) * examp, true, false, false));
         }
         EntityAttributeInstance strength = entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE);
         if (strength != null) {
             int examp = (int) (20.0F - entity.getHealth()) / 5;
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 5, amplifier + examp, true, false, false));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 5, amplifier + (amplifier + 1) * examp, true, false, false));
         }
         return true;
     }
