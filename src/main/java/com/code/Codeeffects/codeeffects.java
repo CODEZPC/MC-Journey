@@ -30,15 +30,17 @@ class UndyingStatusEffect extends StatusEffect {
 }
 
 class BloodClothStatusEffect extends StatusEffect {
+    private int ticks = 0;
     public BloodClothStatusEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0xFF0000);
     }
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
-        if (entity.getHealth() > 5.0F) {
-            entity.setHealth(entity.getHealth() - 0.05F);
+        ticks++;
+        if (ticks >= 20 && entity.getHealth() > 5.0F) {
+            entity.setHealth(entity.getHealth() - 1.0F);
+            ticks = 0;
         }
-        entity.speed = 5.0F;
         return true;
     }
     @Override
