@@ -12,11 +12,8 @@ public class codepotions {
     public static void Registry_Potions() {
         FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
             builder.registerPotionRecipe(
-                    // Input potion.
                     Potions.WATER,
-                    // Ingredient
                     Items.POTATO,
-                    // Output potion.
                     Registries.POTION.getEntry(codeitems.Effect_Undying)
             );
         });
