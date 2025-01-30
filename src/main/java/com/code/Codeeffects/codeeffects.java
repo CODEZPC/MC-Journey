@@ -35,7 +35,7 @@ class BloodCloth extends StatusEffect {
     private int ticks = 0;
     public static final Logger L= LoggerFactory.getLogger("bloodcloth");
     public BloodCloth() {
-        super(StatusEffectCategory.BENEFICIAL, 0xFF0000);
+        super(StatusEffectCategory.BENEFICIAL, 0x3B0402);
     }
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
