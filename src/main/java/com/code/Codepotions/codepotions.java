@@ -6,15 +6,19 @@ import net.minecraft.potion.Potions;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.recipe.Ingredient;
+import com.code.Codeitems.codeitems;
 
 public class codepotions {
     public static void Registry_Potions() {
         FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
-			builder.registerPotionRecipe(
-					Potions.WATER,
-					Ingredient.ofItems(Items.IRON_SWORD),
-					Registries.POTION.getEntry(Identifier.of("code:blood_cloth")).get()
-			);
-		});
+            builder.registerPotionRecipe(
+                    // Input potion.
+                    Potions.WATER,
+                    // Ingredient
+                    Items.POTATO,
+                    // Output potion.
+                    Registries.POTION.getEntry(codeitems.Effect_Undying)
+            );
+        });
     }
 }
