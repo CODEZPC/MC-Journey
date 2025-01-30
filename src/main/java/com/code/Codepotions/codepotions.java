@@ -24,7 +24,7 @@ public class codepotions {
         FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
             builder.registerPotionRecipe(
                     Potions.AWKWARD,
-                    Items.TOTEM_OF_UNDYING,
+                    codeitems.Undying_dust,
                     Registries.POTION.getEntry(codeitems.Effect_Undying)
             );
         });

@@ -64,6 +64,8 @@ public class codeitems {
     public static final Item Data_64PB = new Item((new Item.Settings()).maxCount(96));
     public static final Item Data_256PB = new Item((new Item.Settings()).maxCount(96));
     public static final Item Data_1EB = new Item((new Item.Settings()).maxCount(96));
+    //定义材料 - 不朽粉
+    public static final Item Undying_dust = new Item((new Item.Settings()).maxCount(64));
     //定义药水
     public static final Potion Effect_Undying = Registry.register(Registries.POTION, Identifier.of("code", "effect_undying"), new Potion(new StatusEffectInstance(codeeffects.UNDYING, 2000, 0)));
     public static final Potion Effect_Blood_Cloth_1 = Registry.register(Registries.POTION, Identifier.of("code", "effect_blood_cloth_1"), new Potion(new StatusEffectInstance(codeeffects.BLOOD_CLOTH, 2000, 0)));
@@ -127,9 +129,8 @@ public class codeitems {
         //Register items - skill points
         LOGGER.info("[CODE/ITEMS]:Starting to register items...");
         Registry.register(Registries.ITEM, Identifier.of("code", "skill_point"), Skill_Point);
-        //注册物品 - 药水
-        //Register items - potions
-        ///
+        //注册物品 - 不朽粉
+        Registry.register(Registries.ITEM, Identifier.of("code", "undying_dust"), Undying_dust);
         //注册物品 - 奖牌
         //Register items - medals
         Registry.register(Registries.ITEM, Identifier.of("code", "gold_medal"), Gold_Medal);
@@ -177,6 +178,9 @@ public class codeitems {
         Registry.register(Registries.ITEM_GROUP, Identifier.of("code", "data"), Data);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
             content.add(Skill_Point);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+            content.add(Undying_dust);
         });
         LOGGER.info("[CODE/ITEMS]: Items registering completed.");
     }
