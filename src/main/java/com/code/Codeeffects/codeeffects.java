@@ -4,10 +4,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -41,23 +42,15 @@ class BloodClothStatusEffect extends StatusEffect {
             entity.setHealth(entity.getHealth() - 1.0F);
             EntityAttributeInstance speed = entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
             if (speed != null) {
-                float speed_value = (amplifier + 1) * 0.004F * (20.0F - entity.getHealth()) + 0.1F;
-                speed.setBaseValue(speed_value);
+                int examp = (int) (20.0F - entity.getHealth()) / 5;
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1, amplifier + examp, true, false, false));
             }
-            L.info("BloodCloth: " + entity.getMovementSpeed());
             ticks = 0;
         }
         return true;
     }
     @Override
     public boolean canApplyUpdateEffect(int duration, int amplifier) {
-        return true;
-    }
-    public boolean onRemoved(LivingEntity entity, AttributeContainer attributes, int amplifier) {
-        EntityAttributeInstance speed = entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
-        if (speed != null) {
-            speed.setBaseValue(0.1F);
-        }
         return true;
     }
 }
