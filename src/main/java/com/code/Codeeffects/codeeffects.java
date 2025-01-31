@@ -61,10 +61,10 @@ class BloodCloth extends StatusEffect {
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         ticks++;
         if (ticks >= 120 / (amplifier + 1) && entity.getHealth() > entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 4) {
-            entity.setHealth(entity.getHealth() - entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 20 * (amplifier + 1));
+            entity.setHealth(entity.getHealth() - (float) entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 20 * (amplifier + 1));
             ticks = 0;
         }
-        int examp = (int) (entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() - entity.getHealth()) / (entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 4);
+        int examp = (int) Math.ceil((entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() - entity.getHealth()) / (entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 4));
         entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, amplifier + (amplifier + 1) * examp, true, false, false));
         entity.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 5, amplifier + (amplifier + 1) * examp, true, false, false));
         return true;
