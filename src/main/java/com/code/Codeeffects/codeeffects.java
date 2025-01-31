@@ -19,20 +19,22 @@ import net.minecraft.util.Identifier;
 
 class Undying extends StatusEffect {
     private LivingEntity ent;
+    private float hp;
     public Undying() {
         super(StatusEffectCategory.BENEFICIAL, 0xFFFF00);
     }
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         ent = entity;
+        hp = entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue();
         entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(500.0F);
         entity.setHealth(500.0F);
         return true;
     }
     @Override
     public void onRemoved(AttributeContainer attributes) {
-        ent.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(20.0F);
-        ent.setHealth(20.0F);
+        ent.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(hp);
+        ent.setHealth(hp);
         super.onRemoved(attributes);
     }
     @Override
