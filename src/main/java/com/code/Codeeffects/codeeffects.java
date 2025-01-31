@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -17,13 +18,22 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 
 class Undying extends StatusEffect {
+    private LivingEntity ent;
     public Undying() {
         super(StatusEffectCategory.BENEFICIAL, 0xFFFF00);
     }
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
-        entity.setHealth(20.0F);
+        ent = entity;
+        entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(500.0F);
+        entity.setHealth(500.0F);
         return true;
+    }
+    @Override
+    public void onRemoved(AttributeContainer attributes) {
+        ent.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(20.0F);
+        ent.setHealth(20.0F);
+        super.onRemoved(attributes);
     }
     @Override
     public boolean canApplyUpdateEffect(int duration, int amplifier) {
