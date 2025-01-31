@@ -1,5 +1,8 @@
 package com.code.Codeeffects;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,15 +22,16 @@ import net.minecraft.util.Identifier;
 
 class Undying extends StatusEffect {
     private LivingEntity ent;
-    private double hp = -1.0F;
+    private Map<LivingEntity, Double> originalHealth = new HashMap<>();
     public Undying() {
         super(StatusEffectCategory.BENEFICIAL, 0xFFFF00);
     }
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         ent = entity;
-        if (hp == -1.0F){
-            hp = entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue();
+        if (!originalHealth.containsKey(entity)){
+            double hp = entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue();
+            originalHealth.put(entity, hp);
         }
         entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(500.0F);
         entity.setHealth(500.0F);
@@ -35,9 +39,11 @@ class Undying extends StatusEffect {
     }
     @Override
     public void onRemoved(AttributeContainer attributes) {
-        ent.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(hp);
-        hp = -1.0F;
-        //while (ent.getHealth() > hp) ent.setHealth(ent.getHealth() - 1.0F);
+        if (originalHealth.containsKey(ent)) {
+            double hp = originalHealth.get(ent);
+            ent.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(hp);
+            originalHealth.remove(ent);
+        }
         super.onRemoved(attributes);
     }
     @Override
