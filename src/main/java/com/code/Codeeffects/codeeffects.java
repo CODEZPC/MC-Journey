@@ -4,8 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
@@ -19,7 +19,7 @@ import net.minecraft.util.Identifier;
 
 class Undying extends StatusEffect {
     private LivingEntity ent;
-    private float hp;
+    private double hp;
     public Undying() {
         super(StatusEffectCategory.BENEFICIAL, 0xFFFF00);
     }
@@ -34,7 +34,7 @@ class Undying extends StatusEffect {
     @Override
     public void onRemoved(AttributeContainer attributes) {
         ent.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(hp);
-        ent.setHealth(hp);
+        while (ent.getHealth() > hp) ent.setHealth(ent.getHealth() - 1.0F);
         super.onRemoved(attributes);
     }
     @Override
