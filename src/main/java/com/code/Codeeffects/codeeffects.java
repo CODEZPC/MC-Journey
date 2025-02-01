@@ -1,7 +1,5 @@
 package com.code.Codeeffects;
 
-import java.util.HashMap;
-import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import net.fabricmc.api.ModInitializer;
@@ -11,6 +9,7 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -19,6 +18,7 @@ import net.minecraft.util.Identifier;
 // 不朽
 class Undying extends StatusEffect {
     private LivingEntity ent;
+
     public Undying() {
         super(StatusEffectCategory.BENEFICIAL, 0xFFFF00);
     }
@@ -26,7 +26,6 @@ class Undying extends StatusEffect {
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         ent = entity;
-        entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).setBaseValue(500.0F);
         entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "undying_modifier"), 500.0F - entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue(), EntityAttributeModifier.Operation.ADD_VALUE));
         entity.setHealth(500.0F);
         return true;
@@ -44,12 +43,12 @@ class Undying extends StatusEffect {
     }
 }
 
+
 // 血衣
 class BloodCloth extends StatusEffect {
+    public static final Logger LOGGER = LoggerFactory.getLogger("code/effects/blood_cloth");
     private int ticks = 0;
     private LivingEntity ent;
-    private Map<LivingEntity, Double> originalSpeed = new HashMap<>();
-    private Map<LivingEntity, Double> originalAttack = new HashMap<>();
 
     public BloodCloth() {
         super(StatusEffectCategory.BENEFICIAL, 0x3B0402);
@@ -63,34 +62,99 @@ class BloodCloth extends StatusEffect {
             entity.setHealth(entity.getHealth() - (float) entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 20 * (amplifier + 1));
             ticks = 0;
         }
-        // int examp = (int) Math.ceil((entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() - entity.getHealth()) / (entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 4));
-        // entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, amplifier + (amplifier + 1) * examp, true, false, false));
-        // entity.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 5, amplifier + (amplifier + 1) * examp, true, false, false));
-        if (!originalSpeed.containsKey(entity)) {
-            double speed = entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).getBaseValue();
-            originalSpeed.put(entity, speed);
+        double hp = entity.getHealth();
+        double unit = entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 20;
+        int fx = (int) Math.ceil(hp / unit);
+        LOGGER.debug("FX:" + fx);
+        entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).removeModifier(Identifier.of("code", "blood_cloth_modifier"));
+        entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).removeModifier(Identifier.of("code", "blood_cloth_modifier"));
+        switch (fx) {
+            case 19:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.05F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.05F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 18:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.10F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.10F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 17:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.15F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.15F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 16:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.20F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.20F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 15:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.25F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.25F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 14:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.30F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.30F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 13:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.35F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.35F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 12:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.40F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.40F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 11:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.45F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.45F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 10:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.50F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.50F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 9:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.60F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.60F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 8:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.70F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.70F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 7:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.80F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.80F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 6:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.90F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 1.90F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 5:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 2.00F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 2.00F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 4:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 2.15F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 2.25F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 3:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 2.30F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 2.50F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 2:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 2.45F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 2.75F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            case 1:
+                entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 2.60F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 3.00F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+                break;
+            default:
+                break;
         }
-        if (!originalAttack.containsKey(entity)) {
-            double attack = entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).getBaseValue();
-            originalAttack.put(entity, attack);
-        }
-        entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).setBaseValue((amplifier + 1) * originalSpeed.get(entity) * (entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() - entity.getHealth()) / (entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 4));
-        entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).setBaseValue((amplifier + 1) * originalAttack.get(entity) * (entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() - entity.getHealth()) / (entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 4));
         return true;
     }
 
     @Override
     public void onRemoved(AttributeContainer attributes) {
-        if (originalSpeed.containsKey(ent)) {
-            double speed = originalSpeed.get(ent);
-            ent.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).setBaseValue(speed);
-            originalSpeed.remove(ent);
-        }
-        if (originalAttack.containsKey(ent)) {
-            double attack = originalAttack.get(ent);
-            ent.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).setBaseValue(attack);
-            originalAttack.remove(ent);
-        }
+        ent.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).removeModifier(Identifier.of("code", "blood_cloth_modifier"));
+        ent.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).removeModifier(Identifier.of("code", "blood_cloth_modifier"));
         super.onRemoved(attributes);
     }
 
