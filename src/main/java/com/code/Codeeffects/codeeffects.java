@@ -25,7 +25,6 @@ class Undying extends StatusEffect {
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         ent = entity;
-        entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "undying_modifier"), 500.0F - entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue(), EntityAttributeModifier.Operation.ADD_VALUE));
         entity.setHealth(500.0F);
         return true;
     }
@@ -34,6 +33,14 @@ class Undying extends StatusEffect {
     public void onRemoved(AttributeContainer attributes) {
         ent.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).removeModifier(Identifier.of("code", "undying_modifier"));
         super.onRemoved(attributes);
+    }
+
+    @Override
+    public void onApplied(AttributeContainer attributes, int amplifier) {
+        if (ent.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).hasModifier(Identifier.of("code", "undying_modifier")))
+            ent.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).updateModifier(new EntityAttributeModifier(Identifier.of("code", "undying_modifier"), 0.00F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        else
+            ent.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "undying_modifier"), 0.00F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
     }
 
     @Override
@@ -161,8 +168,12 @@ class BloodCloth extends StatusEffect {
     @Override
     public void onApplied(AttributeContainer attributes, int amplifier) {
         if (ent.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).hasModifier(Identifier.of("code", "blood_cloth_modifier")))
+            ent.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).updateModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 0.00F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        else
             ent.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 0.00F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         if (ent.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).hasModifier(Identifier.of("code", "blood_cloth_modifier")))
+            ent.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).updateModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 0.00F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        else
             ent.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), 0.00F, EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
     }
 
