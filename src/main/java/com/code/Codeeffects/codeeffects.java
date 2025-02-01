@@ -64,7 +64,6 @@ class BloodCloth extends StatusEffect {
         double hp = entity.getHealth();
         double unit = entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 20;
         int fx = (int) Math.ceil(hp / unit);
-        LOGGER.debug("FX:" + fx);
         entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).removeModifier(Identifier.of("code", "blood_cloth_modifier"));
         entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).removeModifier(Identifier.of("code", "blood_cloth_modifier"));
         switch (fx) {
