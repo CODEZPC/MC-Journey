@@ -1,9 +1,6 @@
-/*
- * 
+/* 
  * MC Journey for minecraft 1.21-1.21.1 by CODEZPC
- * 
- * ! 这其中的物品注册在 1.21.2 后进行了更改，需要大范围修改
- * 
+ ! 这其中的物品注册在 1.21.2 后进行了更改，需要大范围修改
  */
 // 包名称
 // Package name
@@ -15,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.code.Codeblocks.codeblocks;
+import com.code.Codeenchantments.codeenchantments;
 import com.code.Codeitems.codeitems;
 import com.code.Codeloot.codeloottables;
 import com.code.Codepotions.codepotions;
@@ -36,5 +34,6 @@ public class MCJourney implements ModInitializer {
         codeloottables.modifyLootTables_STRUCTURES();
         codeloottables.modifyLootTables_ENTITIES();
         codepotions.Registry_Potions();
+        codeenchantments.Registry_Enchantments();
     }
 }
