@@ -2,9 +2,6 @@ package com.code.Codeloot;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.code.Codeitems.codeitems;
-
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
@@ -13,6 +10,7 @@ import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
+import com.code.Codeitems.codeitems;
 
 public class codeloottables {
 
@@ -73,52 +71,52 @@ public class codeloottables {
     private static final Identifier VILLAGE_TOOLSMITH = Identifier.ofVanilla("chests/village/village_toolsmith");
     private static final Identifier VILLAGE_WEAPONSMITH = Identifier.ofVanilla("chests/village/village_weaponsmith");
     /*
-    ENTITES LOOT TABLES
-    Entity Translation roll chance min -> max
-    BLAZE 烈焰人 1 0.8 1 -> 2
-    BOGGED 沼骸 1 0.6 1 -> 1
-    BREEZE 旋风人 1 0.8 1 -> 2
-    CAVE_SPIDER 洞穴蜘蛛 1 0.6 1 -> 1
-    CHICKEN 鸡 1 0.2 1 -> 1
-    COD 鳕鱼 1 0.2 1 -> 1
-    COW 牛 1 0.2 1 -> 1
-    CREEPER 苦力怕 1 0.7 1 -> 2
-    DROWNED 溺尸 1 0.6 1 -> 1
-    ELDER_GUARDIAN 远古守卫者 1 1.0 2 -> 5
-    ENDERMAN 末影人 1 0.6 1 -> 3
-    ENDERMITE 末影螨 1 0.6 1 -> 1
-    EVOKER 唤魔者 1 0.8 1 -> 2
-    GHAST 恶魂 1 0.7 1 -> 2
-    GUARDIAN 守卫者 1 0.8 1 -> 3
-    HOGLIN 疣猪兽 1 0.4 1 -> 1
-    HUSK 尸壳 1 0.6 1 -> 1
-    MAGMA_CUBE 熔岩怪 1 0.5 1 -> 2
-    MOOSHROOM 哞菇 1 0.2 1 -> 1
-    PHANTOM 幻翼 1 0.8 1 -> 2
-    PIG 猪 1 0.2 1 -> 1
-    PIGLIN_BRUTE 猪灵蛮兵 1 0.8 2 -> 4
-    PIGLIN 猪灵 1 0.6 1 -> 3
-    PILLAGER 掠夺者 1 0.7 1 -> 2
-    RABBIT 兔子 1 0.2 1 -> 1
-    RAVAGER 劫掠兽 1 1.0 3 -> 6
-    SALMON 鲑鱼 1 0.2 1 -> 1
-    SHEEP 羊 1 0.2 1 -> 1
-    SHULKER 潜影贝 1 0.7 1 -> 2
-    SILVERFISH 蠹虫 1 0.3 1 -> 1
-    SKELETON 骷髅 1 0.6 1 -> 1
-    SLIME 史莱姆 1 0.5 1 -> 2
-    SPIDER 蜘蛛 1 0.6 1 -> 1
-    STRAY 流浪者 1 0.6 1 -> 1
-    TROPICAL_FISH 热带鱼 1 0.2 1 -> 1
-    VEX 脑鬼 1 0.5 1 -> 2
-    VINDICATOR 卫道士 1 0.8 1 -> 2
-    WARDEN 监守者 1 1.0 20 -> 40
-    WITCH 女巫 1 0.6 1 -> 1
-    WITHER_SKELETON 凋零骷髅 1 0.6 1 -> 1
-    WITHER 凋零 1 1.0 15 -> 30
-    ZOGLIN 僵尸疣猪兽 1 0.4 1 -> 1
-    ZOMBIE 僵尸 1 0.6 1 -> 1
-    ZOMBIFIED_PIGLIN 僵尸猪灵 1 0.5 1 -> 1
+     * ENTITES LOOT TABLES
+     * Entity Translation roll chance min -> max
+     * BLAZE 烈焰人 1 0.8 1 -> 2
+     * BOGGED 沼骸 1 0.6 1 -> 1
+     * BREEZE 旋风人 1 0.8 1 -> 2
+     * CAVE_SPIDER 洞穴蜘蛛 1 0.6 1 -> 1
+     * CHICKEN 鸡 1 0.2 1 -> 1
+     * COD 鳕鱼 1 0.2 1 -> 1
+     * COW 牛 1 0.2 1 -> 1
+     * CREEPER 苦力怕 1 0.7 1 -> 2
+     * DROWNED 溺尸 1 0.6 1 -> 1
+     * ELDER_GUARDIAN 远古守卫者 1 1.0 2 -> 5
+     * ENDERMAN 末影人 1 0.6 1 -> 3
+     * ENDERMITE 末影螨 1 0.6 1 -> 1
+     * EVOKER 唤魔者 1 0.8 1 -> 2
+     * GHAST 恶魂 1 0.7 1 -> 2
+     * GUARDIAN 守卫者 1 0.8 1 -> 3
+     * HOGLIN 疣猪兽 1 0.4 1 -> 1
+     * HUSK 尸壳 1 0.6 1 -> 1
+     * MAGMA_CUBE 熔岩怪 1 0.5 1 -> 2
+     * MOOSHROOM 哞菇 1 0.2 1 -> 1
+     * PHANTOM 幻翼 1 0.8 1 -> 2
+     * PIG 猪 1 0.2 1 -> 1
+     * PIGLIN_BRUTE 猪灵蛮兵 1 0.8 2 -> 4
+     * PIGLIN 猪灵 1 0.6 1 -> 3
+     * PILLAGER 掠夺者 1 0.7 1 -> 2
+     * RABBIT 兔子 1 0.2 1 -> 1
+     * RAVAGER 劫掠兽 1 1.0 3 -> 6
+     * SALMON 鲑鱼 1 0.2 1 -> 1
+     * SHEEP 羊 1 0.2 1 -> 1
+     * SHULKER 潜影贝 1 0.7 1 -> 2
+     * SILVERFISH 蠹虫 1 0.3 1 -> 1
+     * SKELETON 骷髅 1 0.6 1 -> 1
+     * SLIME 史莱姆 1 0.5 1 -> 2
+     * SPIDER 蜘蛛 1 0.6 1 -> 1
+     * STRAY 流浪者 1 0.6 1 -> 1
+     * TROPICAL_FISH 热带鱼 1 0.2 1 -> 1
+     * VEX 脑鬼 1 0.5 1 -> 2
+     * VINDICATOR 卫道士 1 0.8 1 -> 2
+     * WARDEN 监守者 1 1.0 20 -> 40
+     * WITCH 女巫 1 0.6 1 -> 1
+     * WITHER_SKELETON 凋零骷髅 1 0.6 1 -> 1
+     * WITHER 凋零 1 1.0 15 -> 30
+     * ZOGLIN 僵尸疣猪兽 1 0.4 1 -> 1
+     * ZOMBIE 僵尸 1 0.6 1 -> 1
+     * ZOMBIFIED_PIGLIN 僵尸猪灵 1 0.5 1 -> 1
      */
     private static final Identifier BLAZE = Identifier.ofVanilla("entities/blaze");
     private static final Identifier BOGGED = Identifier.ofVanilla("entities/bogged");
@@ -164,1013 +162,613 @@ public class codeloottables {
     private static final Identifier ZOGLIN = Identifier.ofVanilla("entities/zoglin");
     private static final Identifier ZOMBIE = Identifier.ofVanilla("entities/zombie");
     private static final Identifier ZOMBIFIED_PIGLIN = Identifier.ofVanilla("entities/zombified_piglin");
-    public static final Logger LOGGER = LoggerFactory.getLogger("code");
+    public static final Logger LOGGER = LoggerFactory.getLogger("code/loottables");
+
     public static void modifyLootTables_STRUCTURES() {
-        LOGGER.info("[CODE/LOOT TABLES]:Starting to edit loot tables for structures...");
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ABADONED_MINESHAFT.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ANCIENT_CITY.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ANCIENT_CITY_ICE_BOX.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (BASTION_BRIDGE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (BASTION_HOGLIN_STABLE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (BASTION_OTHER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (BASTION_TREASURE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (BURIED_TREASURE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (DESERT_PYRAMID.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (END_CITY_TREASURE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (IGLOO_CHEST.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (JUNGLE_TEMPLE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (JUNGLE_TEMPLE_DISPENSER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.4f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.4f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (NETHER_BRIDGE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (PILLAGER_OUTPOST.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (RUINED_PORTAL.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SHIPWRECK_MAP.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SHIPWRECK_SUPPLY.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SHIPWRECK_TREASURE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SIMPLE_DUNGEON.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SPAWN_BONUS_CHEST.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (STRONGHOLD_CORRIDOR.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (STRONGHOLD_CROSSING.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (STRONGHOLD_LIBRARY.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (UNDERWATER_RUIN_BIG.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (UNDERWATER_RUIN_SMALL.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (WOODLAND_MANSION.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (TRIAL_CHAMBERS_CORRIDOR.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (TRIAL_CHAMBERS_ENTRANCE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (TRIAL_CHAMBERS_INTERSECTION.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (TRIAL_CHAMBERS_INTERSECTION_BARREL.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (TRIAL_CHAMBERS_REWARD.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (TRIAL_CHAMBERS_REWARD_COMMON.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (TRIAL_CHAMBERS_REWARD_OMINOUS.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (TRIAL_CHAMBERS_REWARD_OMINOUS_COMMON.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (TRIAL_CHAMBERS_REWARD_OMINOUS_RARE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (TRIAL_CHAMBERS_REWARD_OMINOUS_UNIQUE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (TRIAL_CHAMBERS_REWARD_RARE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (TRIAL_CHAMBERS_REWARD_UNIQUE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (TRIAL_CHAMBERS_SUPPLY.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_ARMORER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_BUTCHER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_CARTOGRAPHER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_DESERT_HOUSE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_FISHER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_FLETCHER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_MASON.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_PLAINS_HOUSE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_SAVANNA_HOUSE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_SHEPHERD.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_SNOWY_HOUSE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_TAIGA_HOUSE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_TANNERY.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_TEMPLE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_TOOLSMITH.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VILLAGE_WEAPONSMITH.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
-        LOGGER.info("[CODE/LOOT TABLES]:End editing loot tables for structures.");
+        LOGGER.info("End editing loot tables for structures.");
     }
+
     public static void modifyLootTables_ENTITIES() {
-        LOGGER.info("[CODE/LOOT TABLES]:Starting to edit loot tables for entities...");
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (BLAZE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.8f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.8f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (BOGGED.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.6f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.6f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (BREEZE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.8f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.8f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (CAVE_SPIDER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.6f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.6f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (CHICKEN.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.2f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.2f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (COD.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.2f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.2f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (COW.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.2f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.2f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (CREEPER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.7f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.7f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (DROWNED.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.6f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.6f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ELDER_GUARDIAN.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 5.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 5.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ENDERMAN.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.6f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.6f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ENDERMITE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.6f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.6f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (EVOKER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.8f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.8f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (GHAST.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.7f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.7f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (GUARDIAN.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.8f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.8f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (HOGLIN.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.4f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.4f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (HUSK.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.6f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.6f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (MAGMA_CUBE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.5f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.5f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (MOOSHROOM.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.2f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.2f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (PHANTOM.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.8f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.8f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (PIG.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.2f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.2f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (PIGLIN_BRUTE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.8f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.8f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (PIGLIN.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.6f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.6f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (PILLAGER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.7f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.7f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (RABBIT.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.2f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.2f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (RAVAGER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 6.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 6.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SALMON.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.2f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.2f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SHEEP.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.2f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.2f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SHULKER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.7f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.7f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SILVERFISH.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.3f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SKELETON.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.6f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.6f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SLIME.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.5f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.5f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (SPIDER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.6f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.6f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (STRAY.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.6f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.6f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (TROPICAL_FISH.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.2f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.2f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VEX.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.5f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.5f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (VINDICATOR.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.8f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.8f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (WARDEN.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(20.0f, 40.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(20.0f, 40.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (WITCH.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.6f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.6f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (WITHER_SKELETON.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.6f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.6f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (WITHER.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(1.0f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(15.0f, 30.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(1.0f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(15.0f, 30.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ZOGLIN.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.4f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.4f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ZOMBIE.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.6f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.6f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ZOMBIFIED_PIGLIN.equals(key.getValue())) {
-                LootPool.Builder poolBuilder = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.5f))
-                        .with(ItemEntry.builder(codeitems.Skill_Point))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder = LootPool.builder().rolls(ConstantLootNumberProvider.create(1)).conditionally(RandomChanceLootCondition.builder(0.5f)).with(ItemEntry.builder(codeitems.Skill_Point)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 tableBuilder.pool(poolBuilder);
             }
         });
-        LOGGER.info("[CODE/LOOT TABLES]:End editing loot tables for entities.");
+        LOGGER.info("End editing loot tables for entities.");
     }
 }
