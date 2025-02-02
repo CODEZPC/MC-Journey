@@ -7,6 +7,7 @@ import net.fabricmc.api.ModInitializer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
@@ -18,7 +19,7 @@ import net.minecraft.util.Identifier;
 
 // 不朽
 class Undying extends StatusEffect {
-    private LivingEntity ent;
+    //private LivingEntity ent;
 
     public Undying() {
         super(StatusEffectCategory.BENEFICIAL, 0xFFFF00);
@@ -26,17 +27,21 @@ class Undying extends StatusEffect {
 
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
-        ent = entity;
+        //ent = entity;
         if (entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).hasModifier(Identifier.of("code", "undying_modifier")))
             entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).updateModifier(new EntityAttributeModifier(Identifier.of("code", "undying_modifier"), 500.0F - entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue(), EntityAttributeModifier.Operation.ADD_VALUE));
         else
-            entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).addPersistentModifier(new EntityAttributeModifier(Identifier.of("code", "undying_modifier"), 500.0F - entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue(), EntityAttributeModifier.Operation.ADD_VALUE));
+            entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).addTemporaryModifier(new EntityAttributeModifier(Identifier.of("code", "undying_modifier"), 500.0F - entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue(), EntityAttributeModifier.Operation.ADD_VALUE));
         entity.setHealth(500.0F);
         return true;
     }
 
     @Override
     public void onRemoved(AttributeContainer attributes) {
+        EntityAttributeInstance entityAttributeInstance = attributes.getCustomInstance(EntityAttributes.GENERIC_MAX_HEALTH);
+        if (entityAttributeInstance != null) {
+            entityAttributeInstance.removeModifier(Identifier.of("code", "undying_modifier"));
+        }
         //ent.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).removeModifier(Identifier.of("code", "undying_modifier"));
         super.onRemoved(attributes);
     }
