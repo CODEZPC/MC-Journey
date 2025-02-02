@@ -1,6 +1,5 @@
 package com.code.Codeeffects;
 
-//TODO 避免多实体共用变量（所有）
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import net.fabricmc.api.ModInitializer;
@@ -19,7 +18,6 @@ import net.minecraft.util.Identifier;
 
 // 不朽
 class Undying extends StatusEffect {
-    //private LivingEntity ent;
 
     public Undying() {
         super(StatusEffectCategory.BENEFICIAL, 0xFFFF00);
@@ -27,7 +25,6 @@ class Undying extends StatusEffect {
 
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
-        //ent = entity;
         if (entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).hasModifier(Identifier.of("code", "undying_modifier")))
             entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).updateModifier(new EntityAttributeModifier(Identifier.of("code", "undying_modifier"), 500.0F - entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue(), EntityAttributeModifier.Operation.ADD_VALUE));
         else
@@ -42,7 +39,6 @@ class Undying extends StatusEffect {
         if (entityAttributeInstance != null) {
             entityAttributeInstance.removeModifier(Identifier.of("code", "undying_modifier"));
         }
-        //ent.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).removeModifier(Identifier.of("code", "undying_modifier"));
         super.onRemoved(attributes);
     }
 
@@ -173,8 +169,14 @@ class BloodCloth extends StatusEffect {
 
     @Override
     public void onRemoved(AttributeContainer attributes) {
-        ent.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).removeModifier(Identifier.of("code", "blood_cloth_modifier"));
-        ent.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).removeModifier(Identifier.of("code", "blood_cloth_modifier"));
+        EntityAttributeInstance entityAttributeInstance = attributes.getCustomInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
+        if (entityAttributeInstance != null) {
+            entityAttributeInstance.removeModifier(Identifier.of("code", "blood_cloth_modifier"));
+        }
+        entityAttributeInstance = attributes.getCustomInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE);
+        if (entityAttributeInstance != null) {
+            entityAttributeInstance.removeModifier(Identifier.of("code", "blood_cloth_modifier"));
+        }
         super.onRemoved(attributes);
     }
 
