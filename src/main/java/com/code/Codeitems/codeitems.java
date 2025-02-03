@@ -56,6 +56,14 @@ public class codeitems {
         entries.add(Diamond_Medal);
         entries.add(Netherite_Medal);
     }).build();
+    public static final ItemGroup Coins = FabricItemGroup.builder().icon(() -> new ItemStack(GOLDCOIN)).displayName(Text.translatable("itemGroup.code.coins")).entries((context, entries) -> {
+        entries.add(DOT);
+        entries.add(COPPERCOIN);
+        entries.add(IRONCOIN);
+        entries.add(GOLDCOIN);
+        entries.add(DIAMONDCOIN);
+        entries.add(NETHERITECOIN);
+    }).build();
 
     public static void Registry_Items() {
         // 注册物品组
