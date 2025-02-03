@@ -29,8 +29,6 @@ public class codeitems {
         return Registry.register(Registries.ITEM, Identifier.of("code", path), item);
     }
 
-    // 定义物品 - 技能点
-    public static final Item Skill_Point = register("skill_point", new Item(new Item.Settings().maxCount(99)));
     // 定义物品 - 奖牌组
     public static final Item Gold_Medal = register("gold_medal", new Item(new Item.Settings().maxCount(1)));
     public static final Item Iron_Medal = register("iron_medal", new Item(new Item.Settings().maxCount(1)));
@@ -62,9 +60,6 @@ public class codeitems {
     public static void Registry_Items() {
         // 注册物品组
         Registry.register(Registries.ITEM_GROUP, Identifier.of("code", "medals"), Medals);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
-            content.add(Skill_Point);
-        });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
             content.add(Undying_dust);
         });
