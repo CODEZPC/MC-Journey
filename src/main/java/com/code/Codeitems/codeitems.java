@@ -58,12 +58,3 @@ public class codeitems {
         LOGGER.info("Items registering completed.");
     }
 }
-/*
- * ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(
- * content -> {
- * LOGGER.info(String.
- * format("[CODE/BLOCKS]: Registering/Sorting item groups...(1/%d) [TMP_BLOCK -> BUILDING_BLOCKS[ItemGroup]]"
- * , TOTALIG));
- * content.add(TMP_BLOCK);
- * });
- */
