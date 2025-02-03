@@ -18,19 +18,21 @@ import com.code.Codeeffects.codeeffects;
 
 public class codeitems {
     public static final Logger LOGGER = LoggerFactory.getLogger("code/items");
+
     public static <T extends Item> T register(String path, T item) {
         return Registry.register(Registries.ITEM, Identifier.of("code", path), item);
     }
+
     // 定义物品 - 技能点
-    public static final Item Skill_Point = register("custom_item", new Item(new Item.Settings().maxCount(99)));
+    public static final Item Skill_Point = register("skill_point", new Item(new Item.Settings().maxCount(99)));
     // 定义物品 - 奖牌组
-    public static final Item Gold_Medal = new Item((new Item.Settings()).maxCount(1));
-    public static final Item Iron_Medal = new Item((new Item.Settings()).maxCount(1));
-    public static final Item Copper_Medal = new Item((new Item.Settings()).maxCount(1));
-    public static final Item Diamond_Medal = new Item((new Item.Settings()).maxCount(1));
-    public static final Item Netherite_Medal = new Item((new Item.Settings()).maxCount(1));
+    public static final Item Gold_Medal = register("gold_medal", new Item(new Item.Settings().maxCount(1)));
+    public static final Item Iron_Medal = register("iron_medal", new Item(new Item.Settings().maxCount(1)));
+    public static final Item Copper_Medal = register("copper_medal", new Item(new Item.Settings().maxCount(1)));
+    public static final Item Diamond_Medal = register("diamond_medal", new Item(new Item.Settings().maxCount(1)));
+    public static final Item Netherite_Medal = register("netherite_medal", new Item(new Item.Settings().maxCount(1)));
     // 定义材料 - 不朽粉
-    public static final Item Undying_dust = new Item((new Item.Settings()).maxCount(64));
+    public static final Item Undying_dust = register("undying_dust", new Item(new Item.Settings()));
     // 定义药水
     public static final Potion Effect_Undying = Registry.register(Registries.POTION, Identifier.of("code", "effect_undying"), new Potion(new StatusEffectInstance(codeeffects.UNDYING, 2000, 0)));
     public static final Potion Effect_Blood_Cloth_1 = Registry.register(Registries.POTION, Identifier.of("code", "effect_blood_cloth_1"), new Potion(new StatusEffectInstance(codeeffects.BLOOD_CLOTH, 2000, 0)));
@@ -45,16 +47,6 @@ public class codeitems {
     }).build();
 
     public static void Registry_Items() {
-        // 注册物品 - 技能点
-        Registry.register(Registries.ITEM, Identifier.of("code", "skill_point"), Skill_Point);
-        // 注册物品 - 不朽粉
-        Registry.register(Registries.ITEM, Identifier.of("code", "undying_dust"), Undying_dust);
-        // 注册物品 - 奖牌
-        Registry.register(Registries.ITEM, Identifier.of("code", "gold_medal"), Gold_Medal);
-        Registry.register(Registries.ITEM, Identifier.of("code", "iron_medal"), Iron_Medal);
-        Registry.register(Registries.ITEM, Identifier.of("code", "copper_medal"), Copper_Medal);
-        Registry.register(Registries.ITEM, Identifier.of("code", "diamond_medal"), Diamond_Medal);
-        Registry.register(Registries.ITEM, Identifier.of("code", "netherite_medal"), Netherite_Medal);
         // 注册物品组
         Registry.register(Registries.ITEM_GROUP, Identifier.of("code", "medals"), Medals);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
