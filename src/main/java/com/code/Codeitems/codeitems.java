@@ -15,6 +15,12 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import com.code.Codeeffects.codeeffects;
+import com.code.Codeitems.items.Coppercoin;
+import com.code.Codeitems.items.Diamondcoin;
+import com.code.Codeitems.items.Dot;
+import com.code.Codeitems.items.Goldcoin;
+import com.code.Codeitems.items.Ironcoin;
+import com.code.Codeitems.items.Netheritecoin;
 
 public class codeitems {
     public static final Logger LOGGER = LoggerFactory.getLogger("code/items");
@@ -33,6 +39,13 @@ public class codeitems {
     public static final Item Netherite_Medal = register("netherite_medal", new Item(new Item.Settings().maxCount(1)));
     // 定义材料 - 不朽粉
     public static final Item Undying_dust = register("undying_dust", new Item(new Item.Settings()));
+    // 定义 Coin&Point
+    public static final Dot DOT = register("dot", new Dot(new Item.Settings().maxCount(80)));
+    public static final Coppercoin COPPERCOIN = register("copper_coin", new Coppercoin(new Item.Settings().maxCount(80)));
+    public static final Ironcoin IRONCOIN = register("iron_coin", new Ironcoin(new Item.Settings().maxCount(80)));
+    public static final Goldcoin GOLDCOIN = register("gold_coin", new Goldcoin(new Item.Settings().maxCount(80)));
+    public static final Diamondcoin DIAMONDCOIN = register("diamond_coin", new Diamondcoin(new Item.Settings().maxCount(80)));
+    public static final Netheritecoin NETHERITECOIN = register("netherite_coin", new Netheritecoin(new Item.Settings().maxCount(80)));
     // 定义药水
     public static final Potion Effect_Undying = Registry.register(Registries.POTION, Identifier.of("code", "effect_undying"), new Potion(new StatusEffectInstance(codeeffects.UNDYING, 2000, 0)));
     public static final Potion Effect_Blood_Cloth_1 = Registry.register(Registries.POTION, Identifier.of("code", "effect_blood_cloth_1"), new Potion(new StatusEffectInstance(codeeffects.BLOOD_CLOTH, 2000, 0)));

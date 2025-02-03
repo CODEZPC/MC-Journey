@@ -9,8 +9,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class Dot extends Item {
-    public Dot(Settings settings) {
+public class Diamondcoin extends Item {
+    public Diamondcoin(Settings settings) {
         super(settings);
     }
 
@@ -18,10 +18,15 @@ public class Dot extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
         if (stack.getCount() < 10) {
-            return TypedActionResult.fail(stack);
+            stack.decrement(1);
+            ItemStack transferStack = new ItemStack(codeitems.GOLDCOIN, 10);
+            PlayerInventory inventory = user.getInventory();
+            if (!inventory.insertStack(transferStack)) {
+                user.dropItem(transferStack, false);
+            }
         } else {
             stack.decrement(10);
-            ItemStack transferStack = new ItemStack(codeitems.COPPERCOIN);
+            ItemStack transferStack = new ItemStack(codeitems.NETHERITECOIN);
             PlayerInventory inventory = user.getInventory();
             if (!inventory.insertStack(transferStack)) {
                 user.dropItem(transferStack, false);

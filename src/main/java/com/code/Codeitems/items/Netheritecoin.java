@@ -9,23 +9,19 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class Dot extends Item {
-    public Dot(Settings settings) {
+public class Netheritecoin extends Item {
+    public Netheritecoin(Settings settings) {
         super(settings);
     }
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
-        if (stack.getCount() < 10) {
-            return TypedActionResult.fail(stack);
-        } else {
-            stack.decrement(10);
-            ItemStack transferStack = new ItemStack(codeitems.COPPERCOIN);
-            PlayerInventory inventory = user.getInventory();
-            if (!inventory.insertStack(transferStack)) {
-                user.dropItem(transferStack, false);
-            }
+        stack.decrement(1);
+        ItemStack transferStack = new ItemStack(codeitems.DIAMONDCOIN, 10);
+        PlayerInventory inventory = user.getInventory();
+        if (!inventory.insertStack(transferStack)) {
+            user.dropItem(transferStack, false);
         }
         return TypedActionResult.success(user.getStackInHand(hand));
     }
