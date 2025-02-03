@@ -66,7 +66,7 @@ class BloodCloth extends StatusEffect {
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         boolean pl = false;
         if (entity.getHealth() > entity.getMaxHealth() / 4) {
-            entity.setHealth(entity.getHealth() - (float) entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 20 * (amplifier + 1));
+            entity.damage(entity.getDamageSources().magic(), (float) entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 20);
         }
         float hp = entity.getHealth();
         double unit = entity.getMaxHealth() / 20;
@@ -109,7 +109,8 @@ class BloodCloth extends StatusEffect {
 
     @Override
     public boolean canApplyUpdateEffect(int duration, int amplifier) {
-        return duration % 100 == 0;
+        int i = 100 << amplifier;
+        return i > 0 ? duration % 100 == 0 : true;
     }
 }
 
@@ -129,7 +130,7 @@ class Slow_Regeneration extends StatusEffect {
 
     @Override
     public boolean canApplyUpdateEffect(int duration, int amplifier) {
-        return duration % 200 == 0;
+        return duration % 120 == 0;
     }
 }
 
