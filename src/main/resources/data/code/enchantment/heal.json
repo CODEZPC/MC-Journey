@@ -1,0 +1,32 @@
+{
+    "anvil_cost": 8,
+    "description": {
+        "translate": "enchantment.code.heal"
+    },
+    "effects": {
+        "minecraft:tick": [
+            {
+                "effect": {
+                    "type": "minecraft:apply_mob_effect",
+                    "to_apply": "minecraft:regeneration",
+                    "min_amplifier": 0.0,
+                    "max_amplifier": 0.0,
+                    "min_duration": 1.0,
+                    "max_duration": 1.0
+                }
+            }
+        ]
+    },
+    "max_cost": {
+        "base": 55,
+        "per_level_above_first": 0
+    },
+    "max_level": 1,
+    "min_cost": {
+        "base": 8,
+        "per_level_above_first": 0
+    },
+    "slots": ["chest"],
+    "supported_items": "#minecraft:chest_armor",
+    "weight": 3
+}

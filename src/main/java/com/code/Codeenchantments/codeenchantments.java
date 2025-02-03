@@ -7,6 +7,7 @@ import net.minecraft.util.Identifier;
 
 public class codeenchantments{
     public static final RegistryKey<Enchantment> EASY_BREAKING = of("easy_breaking");
+    public static final RegistryKey<Enchantment> HEAL = of("heal");
 
     private static RegistryKey<Enchantment> of(String name) {
         return RegistryKey.of(RegistryKeys.ENCHANTMENT, Identifier.of("code", name));
