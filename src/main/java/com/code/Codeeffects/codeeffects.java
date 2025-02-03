@@ -32,9 +32,9 @@ class Undying extends StatusEffect {
     @Override
     public void onApplied(LivingEntity entity, int amplifier) {
         if (entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).hasModifier(Identifier.of("code", "undying_modifier")))
-            entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).updateModifier(new EntityAttributeModifier(Identifier.of("code", "undying_modifier"), 500.0F - entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue(), EntityAttributeModifier.Operation.ADD_VALUE));
+            entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).updateModifier(new EntityAttributeModifier(Identifier.of("code", "undying_modifier"), 500.0F - entity.getMaxHealth(), EntityAttributeModifier.Operation.ADD_VALUE));
         else
-            entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).addTemporaryModifier(new EntityAttributeModifier(Identifier.of("code", "undying_modifier"), 500.0F - entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue(), EntityAttributeModifier.Operation.ADD_VALUE));
+            entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).addTemporaryModifier(new EntityAttributeModifier(Identifier.of("code", "undying_modifier"), 500.0F - entity.getMaxHealth(), EntityAttributeModifier.Operation.ADD_VALUE));
         super.onApplied(entity, amplifier);
     }
 
@@ -65,18 +65,18 @@ class BloodCloth extends StatusEffect {
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         boolean pl = false;
-        if (entity.getHealth() > entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 4) {
+        if (entity.getHealth() > entity.getMaxHealth() / 4) {
             entity.setHealth(entity.getHealth() - (float) entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 20 * (amplifier + 1));
         }
         float hp = entity.getHealth();
-        double unit = entity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).getBaseValue() / 20;
+        double unit = entity.getMaxHealth() / 20;
         int fx = (int) Math.ceil(hp / unit);
         if (entity instanceof PlayerEntity)
             pl = true;
         else
             pl = false;
-        float[] atk = {0.00F,2.00F,1.75F,1.50F,1.25F,1.00F,0.90F,0.80F,0.70F,0.60F,0.50F,0.45F,0.40F,0.35F,0.30F,0.25F,0.20F,0.15F,0.10F,0.05F,0.00F};
-        float[] spd = {0.00F,1.60F,1.45F,1.30F,1.15F,1.00F,0.90F,0.80F,0.70F,0.60F,0.50F,0.45F,0.40F,0.35F,0.30F,0.25F,0.20F,0.15F,0.10F,0.05F,0.00F};
+        float[] atk = {0.00F, 2.00F, 1.75F, 1.50F, 1.25F, 1.00F, 0.90F, 0.80F, 0.70F, 0.60F, 0.50F, 0.45F, 0.40F, 0.35F, 0.30F, 0.25F, 0.20F, 0.15F, 0.10F, 0.05F, 0.00F};
+        float[] spd = {0.00F, 1.60F, 1.45F, 1.30F, 1.15F, 1.00F, 0.90F, 0.80F, 0.70F, 0.60F, 0.50F, 0.45F, 0.40F, 0.35F, 0.30F, 0.25F, 0.20F, 0.15F, 0.10F, 0.05F, 0.00F};
         entity.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED).updateModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), spd[pl ? (int) hp : fx], EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).updateModifier(new EntityAttributeModifier(Identifier.of("code", "blood_cloth_modifier"), atk[pl ? (int) hp : fx], EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         return true;
@@ -113,18 +113,20 @@ class BloodCloth extends StatusEffect {
     }
 }
 
+
 //缓慢再生
-/*
 class Slow_Regeneration extends StatusEffect {
     public Slow_Regeneration() {
-        super(StatusEffectType.BENEFICIAL, 0xCD5CAB);
+        super(StatusEffectCategory.BENEFICIAL, 0xCD5CAB);
     }
+
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
+        if (entity.getHealth() < entity.getMaxHealth())
+            entity.setHealth(entity.getHealth() + 1);
         return true;
     }
 }
-*/
 
 
 public class codeeffects implements ModInitializer {
