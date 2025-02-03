@@ -95,6 +95,7 @@
     "biome.wooded_badlands": "疏林恶地",
     "block.code.tmp_block": "临时方块",
     "effect.code.blood_cloth": "血衣",
+    "effect.code.slow_regeneration": "缓慢再生",
     "effect.code.undying": "不朽",
     "enchantment.code.easy_unbreaking": "易损",
     "enchantment.code.heal": "治疗",

@@ -123,8 +123,13 @@ class Slow_Regeneration extends StatusEffect {
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         if (entity.getHealth() < entity.getMaxHealth())
-            entity.setHealth(entity.getHealth() + 1);
+            entity.heal(1.0F);
         return true;
+    }
+
+    @Override
+    public boolean canApplyUpdateEffect(int duration, int amplifier) {
+        return duration % 200 == 0;
     }
 }
 
@@ -133,9 +138,11 @@ public class codeeffects implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("code/effects");
     public static final RegistryEntry<StatusEffect> UNDYING;
     public static final RegistryEntry<StatusEffect> BLOOD_CLOTH;
+    public static final RegistryEntry<StatusEffect> SLOW_REGENERATION;
     static {
         UNDYING = Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of("code", "undying"), new Undying());
         BLOOD_CLOTH = Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of("code", "blood_cloth"), new BloodCloth());
+        SLOW_REGENERATION = Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of("code", "slow_regeneration"), new Slow_Regeneration());
     }
 
     @Override

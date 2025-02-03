@@ -95,6 +95,7 @@
     "biome.wooded_badlands": "Wooded Badlands",
     "block.code.tmp_block": "TEMP BLOCK",
     "effect.code.blood_cloth": "Bloodstained Clothes",
+    "effect.code.slow_regeneration": "Slow Regeneration",
     "effect.code.undying": "Undying",
     "enchantment.code.easy_unbreaking": "Easy Breaking",
     "enchantment.code.heal": "Heal",
