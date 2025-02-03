@@ -68,6 +68,7 @@ public class codeitems {
     public static void Registry_Items() {
         // 注册物品组
         Registry.register(Registries.ITEM_GROUP, Identifier.of("code", "medals"), Medals);
+        Registry.register(Registries.ITEM_GROUP, Identifier.of("code", "coins"), Coins);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
             content.add(Undying_dust);
         });
