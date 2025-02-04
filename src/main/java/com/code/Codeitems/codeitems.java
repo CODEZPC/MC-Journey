@@ -49,14 +49,14 @@ public class codeitems {
     public static final Potion Effect_Blood_Cloth_1 = Registry.register(Registries.POTION, Identifier.of("code", "effect_blood_cloth_1"), new Potion(new StatusEffectInstance(codeeffects.BLOOD_CLOTH, 2000, 0)));
     public static final Potion Effect_Blood_Cloth_2 = Registry.register(Registries.POTION, Identifier.of("code", "effect_blood_cloth_2"), new Potion(new StatusEffectInstance(codeeffects.BLOOD_CLOTH, 2000, 1)));
     // 定义物品组 - 奖牌组
-    public static final ItemGroup Medals = FabricItemGroup.builder().icon(() -> new ItemStack(Gold_Medal)).displayName(Text.translatable("itemGroup.code.medal")).entries((context, entries) -> {
+    public static final ItemGroup Medals = FabricItemGroup.builder().icon(() -> new ItemStack(Gold_Medal)).displayName(Text.translatable("itemGroup.code.medal")).entries((_, entries) -> {
         entries.add(Copper_Medal);
         entries.add(Iron_Medal);
         entries.add(Gold_Medal);
         entries.add(Diamond_Medal);
         entries.add(Netherite_Medal);
     }).build();
-    public static final ItemGroup Coins = FabricItemGroup.builder().icon(() -> new ItemStack(GOLDCOIN)).displayName(Text.translatable("itemGroup.code.coins")).entries((context, entries) -> {
+    public static final ItemGroup Coins = FabricItemGroup.builder().icon(() -> new ItemStack(GOLDCOIN)).displayName(Text.translatable("itemGroup.code.coins")).entries((_, entries) -> {
         entries.add(DOT);
         entries.add(COPPERCOIN);
         entries.add(IRONCOIN);
