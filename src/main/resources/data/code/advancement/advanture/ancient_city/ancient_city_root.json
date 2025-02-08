@@ -1,0 +1,35 @@
+{
+    "parent": "code:advanture/root",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:sculk"
+        },
+        "title": {
+            "translate": "advanture.ancient_city_root"
+        },
+        "description": {
+            "translate" :"advanture.ancient_city_root.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "enter": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "structures": "minecraft:ancient_city"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "enter"
+        ]
+    ]
+}
