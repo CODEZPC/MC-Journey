@@ -1,0 +1,42 @@
+{
+    "parent": "code:advanture/ancient_city/ancient_city_root",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:chest"
+        },
+        "title": {
+            "translate": "advanture.ancient_city_chest"
+        },
+        "description": {
+            "translate": "advanture.ancient_city_chest.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "chest": {
+            "trigger": "minecraft:any_block_use",
+            "conditions": {
+                "location": [
+                    {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                            "structures": "minecraft:ancient_city"
+                        }
+                    },
+                    {
+                        "condition": "minecraft:block_state_property",
+                        "block": "minecraft:chest"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "chest"
+        ]
+    ]
+}
