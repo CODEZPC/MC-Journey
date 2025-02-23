@@ -1,0 +1,35 @@
+{
+    "parent": "code:advanture/ancient_city/ancient_city_echo_shard",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:recovery_compass"
+        },
+        "title": {
+            "translate": "advanture.ancient_city_recovery_compass"
+        },
+        "description": {
+            "translate": "advanture.ancient_city_recovery_compass.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:recovery_compass"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}

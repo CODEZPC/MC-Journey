@@ -3,7 +3,7 @@
 	"package": "com.code.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"codeattributemixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

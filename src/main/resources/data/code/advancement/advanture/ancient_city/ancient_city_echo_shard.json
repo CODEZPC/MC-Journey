@@ -1,0 +1,35 @@
+{
+    "parent": "code:advanture/ancient_city/ancient_city_chest",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:echo_shard"
+        },
+        "title": {
+            "translate": "advanture.ancient_city_echo_shard"
+        },
+        "description": {
+            "translate": "advanture.ancient_city_echo_shard.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:echo_shard"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}
