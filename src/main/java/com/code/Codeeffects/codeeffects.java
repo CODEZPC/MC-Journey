@@ -135,6 +135,17 @@ class Slow_Regeneration extends StatusEffect {
 }
 
 
+/*
+ * 破伤风之刃（设想）
+ * 效果
+ *   获得此效果后，立刻获得一层[锈蚀]，后每(5/amp)s叠加一层，当攻击敌人时，给对方增加与[锈蚀]层数相同的[破伤风]层数并减少一层[锈蚀]，持续时间45s
+ *   [锈蚀]
+ *     每层[锈蚀]使攻击力降低1点，最大叠层4层
+ *   [破伤风]
+ *     每层[破伤风]使生命值上限减少10%，使血量颜色变为#CC753F，每次受到攻击都会有(2.5*层数)%的概率直接死亡，每层单独计时
+ */
+
+
 public class codeeffects implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("code/effects");
     public static final RegistryEntry<StatusEffect> UNDYING;
