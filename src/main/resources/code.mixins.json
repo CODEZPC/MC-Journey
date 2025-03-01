@@ -3,9 +3,9 @@
 	"package": "com.code.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"codeattributemixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
-	}
+	},
+	"refmap":"mixins.code.refmap.json"
 }

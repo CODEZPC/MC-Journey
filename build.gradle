@@ -28,6 +28,9 @@ loom {
 		}
 	}
 
+	mixin {
+        defaultRefmapName = "mixins.code.refmap.json"
+    }
 }
 
 dependencies {
