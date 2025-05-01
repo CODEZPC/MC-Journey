@@ -16,27 +16,23 @@
         "frame": "task"
     },
     "criteria": {
-        "chest": {
-            "trigger": "minecraft:any_block_use",
+        "ancient_city": {
+            "trigger": "minecraft:player_generates_container_loot",
             "conditions": {
-                "location": [
-                    {
-                        "condition": "minecraft:location_check",
-                        "predicate": {
-                            "structures": "minecraft:ancient_city"
-                        }
-                    },
-                    {
-                        "condition": "minecraft:block_state_property",
-                        "block": "minecraft:chest"
-                    }
-                ]
+                "loot_table": "minecraft:chests/ancient_city"
+            }
+        },
+        "ancient_city_ice_box": {
+            "trigger": "minecraft:player_generates_container_loot",
+            "conditions": {
+                "loot_table": "minecraft:chests/ancient_city_ice_box"
             }
         }
     },
     "requirements": [
         [
-            "chest"
+            "ancient_city",
+            "ancient_city_ice_box"
         ]
     ]
 }
