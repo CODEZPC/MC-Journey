@@ -1,0 +1,36 @@
+
+{
+    "parent": "code:advanture/ancient_city/ancient_city_chest",
+    "display": {
+        "icon": {
+            "count": 1,
+            "id": "minecraft:disc_fragment_5"
+        },
+        "title": {
+            "translate": "advanture.ancient_city_disc_fragment_5"
+        },
+        "description": {
+            "translate": "advanture.ancient_city_disc_fragment_5.d"
+        },
+        "announce_to_chat": true,
+        "show_toast": true,
+        "frame": "task"
+    },
+    "criteria": {
+        "get": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:disc_fragment_5"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "get"
+        ]
+    ]
+}
