@@ -163,7 +163,7 @@ public class codeloottables {
     private static final Identifier ZOMBIE = Identifier.ofVanilla("entities/zombie");
     private static final Identifier ZOMBIFIED_PIGLIN = Identifier.ofVanilla("entities/zombified_piglin");
     public static final Logger LOGGER = LoggerFactory.getLogger("code/loottables");
-
+    @SuppressWarnings("unused")
     public static void modifyLootTables_STRUCTURES() {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (ABADONED_MINESHAFT.equals(key.getValue())) {
@@ -504,6 +504,7 @@ public class codeloottables {
         LOGGER.info("End editing loot tables for structures.");
     }
 
+    @SuppressWarnings("unused")
     public static void modifyLootTables_ENTITIES() {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             if (BLAZE.equals(key.getValue())) {
