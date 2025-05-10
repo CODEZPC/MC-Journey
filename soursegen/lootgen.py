@@ -1,7 +1,7 @@
 while True:
     name,tmp,roll,chance,mi,ttp,mx = input().split()
     # name = input("Loot table:")
-    # # fr = input("from:")
+    # fr = input("from:")
     # roll = input("roll:")
     # chance = input("chance:")
     # mi = input("min:")
