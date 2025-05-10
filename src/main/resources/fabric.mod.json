@@ -1,14 +1,17 @@
 {
 	"schemaVersion": 1,
 	"id": "code",
-	"version": "1.3 alpha 1",
+	"version": "1.3.0.1",
 	"name": "MC Journey",
 	"description": "Main pack of MC Journey",
 	"authors": [
 		"CODEZPC"
 	],
 	"contact": {
-		"homepage": "https://modrinth.com/modpack/mc-journey"
+		"email": "zpcpy@outlook.com",
+		"homepage": "https://modrinth.com/modpack/mc-journey",
+		"issues": "https://github.com/CODEZPC/MC-Journey/issues",
+		"sources": "https://github.com/CODEZPC/MC-Journey"
 	},
 	"icon": "assets/code/icon.png",
 	"environment": "*",
