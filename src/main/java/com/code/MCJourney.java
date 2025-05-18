@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.code.Codeblocks.codeblocks;
+import com.code.Codecommands.codecommands;
 import com.code.Codeenchantments.codeenchantments;
 import com.code.Codeitems.codeitems;
 import com.code.Codeloot.codeloottables;
@@ -30,6 +31,7 @@ public class MCJourney implements ModInitializer {
     @Override
     public void onInitialize() {
         codeblocks.Registry_Blocks();
+        codecommands.Registry_Commands();
         codeitems.Registry_Items();
         codeloottables.modifyLootTables_STRUCTURES();
         codeloottables.modifyLootTables_ENTITIES();
