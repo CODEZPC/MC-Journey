@@ -1,8 +1,6 @@
 package com.code.Codecommands;
 
 import static net.minecraft.server.command.CommandManager.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.fabricmc.fabric.api.command.v2.*;
 import net.minecraft.command.argument.EntityArgumentType;
@@ -11,7 +9,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 
 public class codecommands {
-    public static final Logger LOGGER = LoggerFactory.getLogger("code/command-running");
     @SuppressWarnings("unused")
     public static void Registry_Commands() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(literal("find").requires(source -> source.hasPermissionLevel(2)).then(argument("player", EntityArgumentType.player()).executes(context -> {
