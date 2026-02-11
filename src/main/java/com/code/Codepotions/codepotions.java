@@ -9,7 +9,7 @@ import net.minecraft.registry.Registries;
 import com.code.Codeitems.codeitems;
 
 public class codepotions {
-    public static final Logger LOGGER = LoggerFactory.getLogger("code/potons");
+    public static final Logger LOGGER = LoggerFactory.getLogger("code/potions");
 
     public static void Registry_Potions() {
         FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
